@@ -1,5 +1,5 @@
 languageCode = "en-us"
-title = "Massively"
+title = "Not Just a Statistic"
 baseURL = "http://localhost:1313/"
 theme = "hugo-theme-massively"
 googleanalytics = "UA-124600408-1"
