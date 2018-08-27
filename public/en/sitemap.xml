@@ -12,6 +12,11 @@
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="fr"
+                href="/fr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="es"
                 href="/es/categories/"
                 />
@@ -26,6 +31,11 @@
     <loc>/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
@@ -72,6 +82,11 @@
     <loc>/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/tags/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
