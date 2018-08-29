@@ -6,19 +6,19 @@
     <description>Recent content on Not Just a Statistic</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; NotJustAStatistic 2018</copyright>
-    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Another Damn TEST</title>
-      <link>/blog/another-damn-test/</link>
-      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Welcome</title>
+      <link>/blog/welcome/</link>
+      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/another-damn-test/</guid>
-      <description>This is the header There is some code below
-x &amp;lt;- sample(1:100, 10000, replace = T) hist(x)  </description>
+      <guid>/blog/welcome/</guid>
+      <description>This website is currently in the works. I want to create a blog. I have tons of material. Just need time setting it up. Stay tuned!
+# Define a deck of cards values &amp;lt;- c(&amp;quot;Ace&amp;quot;, 2:10, &amp;quot;Jack&amp;quot;, &amp;quot;Queen&amp;quot;, &amp;quot;King&amp;quot;) suits &amp;lt;- c(&amp;quot;Hearts&amp;quot;, &amp;quot;Diamonds&amp;quot;, &amp;quot;Clubs&amp;quot;, &amp;quot;Spades&amp;quot;) deck &amp;lt;- expand.grid(values, suits, stringsAsFactors = FALSE) colnames(deck) &amp;lt;- c(&amp;quot;Value&amp;quot;, &amp;quot;Suit&amp;quot;) # Define the game n.players &amp;lt;- 8 n.decks &amp;lt;- 1 # Define the final deck based on n.</description>
     </item>
     
   </channel>
