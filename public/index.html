@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 2.4.0">
-  <meta name="generator" content="Hugo 0.47.1" />
-  <meta name="author" content="Christopher Maerzluft">
+  <meta name="generator" content="Hugo 0.48" />
+  <meta name="author" content="Lena Smith">
 
   
   
   
   
-  <meta name="description" content="Research Programmer / Data Scientist">
+  <meta name="description" content="Professor of Artificial Intelligence">
 
   
   <link rel="alternate" hreflang="en-us" href="/">
@@ -27,7 +27,7 @@
   
   
   
-  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  <meta name="theme-color" content="#0095eb">
   
 
   
@@ -48,7 +48,9 @@
     
       
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css" crossorigin="anonymous">
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
       
     
 
@@ -68,25 +70,11 @@
 
   
   
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-124600408-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
   
 
   
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Not Just a Statistic">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Not Just a Statistic">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Academic">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -97,10 +85,13 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="og:site_name" content="Not Just a Statistic">
+  <meta property="twitter:site" content="@GeorgeCushen">
+  <meta property="twitter:creator" content="@GeorgeCushen">
+  
+  <meta property="og:site_name" content="Academic">
   <meta property="og:url" content="/">
-  <meta property="og:title" content="Not Just a Statistic">
-  <meta property="og:description" content="Research Programmer / Data Scientist">
+  <meta property="og:title" content="Academic">
+  <meta property="og:description" content="Professor of Artificial Intelligence">
   <meta property="og:locale" content="en-us">
   
   <meta property="og:updated_time" content="2017-10-15T00:00:00-07:00">
@@ -110,10 +101,10 @@
 
   
 
-  <title>Not Just a Statistic</title>
+  <title>Academic</title>
 
 </head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" class="dark">
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
 
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
   <div class="container">
@@ -129,7 +120,7 @@
         <span class="icon-bar"></span>
       </button>
       
-      <a class="navbar-brand" href="/">Not Just a Statistic</a>
+      <a class="navbar-brand" href="/">Academic</a>
     </div>
 
     
@@ -294,15 +285,40 @@ url('/img/headers/bubbles-wide.jpg');
   <div class="container">
 
     <h1 class="hero-title" itemprop="headline">
-      Not Just a Statistic
+      Academic
     </h1>
 
     
-    <p class="hero-lead">A blog on data science and how it impacts your daily life.</p>
+    <p class="hero-lead">The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀
+<br>
+<small><a id="academic-release" href="https://sourcethemes.com/academic/updates">Latest release</a></small>
+<br><br>
+<iframe style="display: inline-block;" src="https://ghbtns.com/github-btn.html?user=gcushen&amp;repo=hugo-academic&amp;type=star&amp;count=true&amp;size=large" scrolling="0" width="160px" height="30px" frameborder="0"></iframe>
+<iframe style="display: inline-block;" src="https://ghbtns.com/github-btn.html?user=gcushen&amp;repo=hugo-academic&amp;type=fork&amp;count=true&amp;size=large" scrolling="0" width="158px" height="30px" frameborder="0"></iframe></p>
+
+<script type="text/javascript">
+  (function defer() {
+    if (window.jQuery) {
+      jQuery(document).ready(function(){
+        GetLatestReleaseInfo();
+      });
+    } else {
+      setTimeout(function() { defer() }, 50);
+    }
+  })();  
+  function GetLatestReleaseInfo() {
+    $.getJSON('https://api.github.com/repos/gcushen/hugo-academic/tags').done(function (json) {
+      let release = json[0];
+      // let downloadURL = release.zipball_url;
+      $('#academic-release').text('Latest release ' + release.name);  
+    });    
+}  
+</script>
+</p>
     
 
     
-    <p><a href="./post/" class="btn btn-light btn-outline btn-large"><i class="fa fa-address-card"></i> Start Reading</a></p>
+    <p><a href="./post/getting-started/" class="btn btn-light btn-outline btn-large"><i class="fa fa-download"></i> Install Now</a></p>
     
 
   </div>
@@ -320,7 +336,7 @@ url('/img/headers/bubbles-wide.jpg');
 
 
 
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email">
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email person-telephone person-address">
   <div class="col-xs-12 col-md-4">
     <div id="profile">
 
@@ -330,12 +346,18 @@ url('/img/headers/bubbles-wide.jpg');
       
 
       <div class="portrait-title">
-        <h2 itemprop="name">Christopher Maerzluft</h2>
-        <h3 itemprop="jobTitle">Research Programmer / Data Scientist</h3>
+        <h2 itemprop="name">Lena Smith</h2>
+        <h3 itemprop="jobTitle">Professor of Artificial Intelligence</h3>
 
         
         
 
+        
+        <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+          
+          <span itemprop="name">Stanford University</span>
+          
+        </h3>
         
       </div>
 
@@ -345,21 +367,28 @@ url('/img/headers/bubbles-wide.jpg');
         
         
         <li>
-          <a itemprop="sameAs" href="mailto:notjustastatistic.blog@gmail.com" target="_blank" rel="noopener">
+          <a itemprop="sameAs" href="mailto:test@example.org" target="_blank" rel="noopener">
             <i class="fa fa-envelope big-icon"></i>
           </a>
         </li>
         
         
         <li>
-          <a itemprop="sameAs" href="https://www.linkedin.com/in/christopher-maerzluft-28902b61/" target="_blank" rel="noopener">
-            <i class="fa fa-linkedin big-icon"></i>
+          <a itemprop="sameAs" href="//twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+            <i class="fa fa-twitter big-icon"></i>
           </a>
         </li>
         
         
         <li>
-          <a itemprop="sameAs" href="https://github.com/cmaerzluft" target="_blank" rel="noopener">
+          <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar big-icon"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a itemprop="sameAs" href="//github.com/gcushen" target="_blank" rel="noopener">
             <i class="fa fa-github big-icon"></i>
           </a>
         </li>
@@ -534,9 +563,11 @@ url('/img/headers/bubbles-wide.jpg');
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/" target="_blank" rel="noopener">
-  Project
-</a>
+  
+  <a class="btn btn-primary btn-outline btn-xs" href="/project/example-external-project/">
+    Project
+  </a>
+  
 
 
 
@@ -682,9 +713,11 @@ url('/img/headers/bubbles-wide.jpg');
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/" target="_blank" rel="noopener">
-  Project
-</a>
+  
+  <a class="btn btn-primary btn-outline btn-xs" href="/project/example-external-project/">
+    Project
+  </a>
+  
 
 
 
@@ -775,6 +808,12 @@ url('/img/headers/bubbles-wide.jpg');
 
 
 
+  
+  <a class="btn btn-primary btn-outline btn-xs" href="/project/deep-learning/">
+    Project
+  </a>
+  
+
 
 
   </div>
@@ -824,168 +863,6 @@ url('/img/headers/bubbles-wide.jpg');
 
         
         
-
-      
-      
-        
-        
-          
-
-<div class="card-simple" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  
-
-<div class="article-metadata">
-
-  
-  
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
-  </span>
-  
-
-  <span class="article-date">
-    
-    <meta content="2018-08-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-    <time datetime="2018-08-30 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Aug 30, 2018
-    </time>
-  </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    0 min read
-  </span>
-  
-
-  
-  
-
-  
-  
-  
-  
-
-  
-
-</div>
-
-
-  
-  
-  <h3 class="article-title" itemprop="headline">
-    <a href="/post/test/" itemprop="url">Test</a>
-  </h3>
-  <div class="article-style" itemprop="articleBody">
-    
-    
-    
-  </div>
-  <p class="read-more" itemprop="mainEntityOfPage">
-    <a href="/post/test/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-        
-      
-
-      
-
-        
-
-        
-        
-
-        
-        
-
-      
-      
-        
-        
-          
-
-<div class="card-simple" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  
-
-<div class="article-metadata">
-
-  
-  
-  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
-  </span>
-  
-
-  <span class="article-date">
-    
-    <meta content="2018-08-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-    <time datetime="2018-08-29 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Aug 29, 2018
-    </time>
-  </span>
-  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    1 min read
-  </span>
-  
-
-  
-  
-
-  
-  
-  
-  
-
-  
-
-</div>
-
-
-  
-  
-  <h3 class="article-title" itemprop="headline">
-    <a href="/post/welcome/" itemprop="url">Welcome</a>
-  </h3>
-  <div class="article-style" itemprop="articleBody">
-    
-    This website is currently in the works. I want to create a blog.
-I have tons of material.
-Just need time setting it up.
-Stay tuned!
-# Define a deck of cards values &lt;- c(&quot;Ace&quot;, 2:10, &quot;Jack&quot;, &quot;Queen&quot;, &quot;King&quot;) suits &lt;- c(&quot;Hearts&quot;, &quot;Diamonds&quot;, &quot;Clubs&quot;, &quot;Spades&quot;) deck &lt;- expand.grid(values, suits, stringsAsFactors = FALSE) colnames(deck) &lt;- c(&quot;Value&quot;, &quot;Suit&quot;) # Define the game n.players &lt;- 8 n.decks &lt;- 1 # Define the final deck based on n.
-    
-  </div>
-  <p class="read-more" itemprop="mainEntityOfPage">
-    <a href="/post/welcome/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-        
-      
-
-      
-
-        
-
-        
-        
-
-        
-        
           
       
 
@@ -1003,7 +880,7 @@ Stay tuned!
   
   
   <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
+    <meta itemprop="name" content="Lena Smith">
   </span>
   
 
@@ -1017,7 +894,7 @@ Stay tuned!
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Christopher Maerzluft">
+    <meta itemprop="name" content="Lena Smith">
   </span>
 
   
@@ -1056,6 +933,101 @@ Stay tuned!
   </div>
   <p class="read-more" itemprop="mainEntityOfPage">
     <a href="/post/getting-started/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+        
+      
+
+      
+
+        
+
+        
+        
+
+        
+        
+          
+      
+          
+      
+          
+      
+
+      
+      
+        
+        
+          
+
+<div class="card-simple" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lena Smith">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2015-07-23 21:13:14 -0500 -0500" itemprop="datePublished">
+    <time datetime="2015-07-23 21:13:14 -0500 -0500" itemprop="dateModified">
+      Jul 23, 2015
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lena Smith">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r/">R</a>
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+
+  
+  
+  <h3 class="article-title" itemprop="headline">
+    <a href="/post/2015-07-23-r-rmarkdown/" itemprop="url">Hello R Markdown</a>
+  </h3>
+  <div class="article-style" itemprop="articleBody">
+    
+    R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
+    
+  </div>
+  <p class="read-more" itemprop="mainEntityOfPage">
+    <a href="/post/2015-07-23-r-rmarkdown/" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
@@ -1133,7 +1105,7 @@ Stay tuned!
       
       
       
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item ">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item deep-learning">
         <div class="card">
           
           <a href="/project/deep-learning/" title="" class="card-image hover-overlay"
@@ -1156,7 +1128,7 @@ Stay tuned!
       
       
       
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item ">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 project-item isotope-item demo">
         <div class="card">
           
           <a href="http://example.org" title="" class="card-image hover-overlay"
@@ -1255,6 +1227,31 @@ Stay tuned!
           
           <a href="/tags/academic/" style="font-size:0.8rem">Academic</a>
         
+          
+          
+          
+          <a href="/tags/deep-learning/" style="font-size:0.8rem">Deep Learning</a>
+        
+          
+          
+          
+          <a href="/tags/demo/" style="font-size:0.8rem">Demo</a>
+        
+          
+          
+          
+          <a href="/tags/r-markdown/" style="font-size:0.8rem">R Markdown</a>
+        
+          
+          
+          
+          <a href="/tags/plot/" style="font-size:0.8rem">plot</a>
+        
+          
+          
+          
+          <a href="/tags/regression/" style="font-size:0.8rem">regression</a>
+        
       </div>
     
 
@@ -1336,7 +1333,7 @@ Stay tuned!
       
       <li>
         <i class="fa-li fa fa-envelope fa-2x" aria-hidden="true"></i>
-        <span id="person-email" itemprop="email"><a href="mailto:notjustastatistic.blog@gmail.com">notjustastatistic.blog@gmail.com</a></span>
+        <span id="person-email" itemprop="email"><a href="mailto:test@example.org">test@example.org</a></span>
       </li>
       
 
@@ -1345,13 +1342,33 @@ Stay tuned!
       
 
       
+      <li>
+        <i class="fa-li fa fa-phone fa-2x" aria-hidden="true"></i>
+        <span id="person-telephone" itemprop="telephone"><a href="tel:888%20888%2088%2088">888 888 88 88</a></span>
+      </li>
+      
 
+      
+      <li>
+        <i class="fa-li fa fa-skype fa-2x" aria-hidden="true"></i>
+        <span><a href="skype:echo123?call">echo123</a></span>
+      </li>
       
 
       
 
       
+      <li>
+        <i class="fa-li fa fa-map-marker fa-2x" aria-hidden="true"></i>
+        <span id="person-address" itemprop="address">Building 1 Room 1, Stanford University, California, 90210, USA</span>
+      </li>
+      
 
+      
+      <li>
+        <i class="fa-li fa fa-clock-o fa-2x" aria-hidden="true"></i>
+        <span>Monday 10:00 to 13:00 or email for appointment</span>
+      </li>
       
 
     </ul>
@@ -1424,15 +1441,6 @@ Stay tuned!
 
     
     
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        CommonHTML: { linebreaks: { automatic: true } },
-        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
-        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
-        messageStyle: 'none'
-      });
-    </script>
-    
 
     
     
@@ -1447,15 +1455,9 @@ Stay tuned!
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
