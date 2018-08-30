@@ -15,7 +15,7 @@ authors = ["GA Cushen"]
 # 4 = Report
 # 5 = Book
 # 6 = Book section
-publication_types = ["2"]
+publication_types = []
 
 # Publication name and optional abbreviated version.
 publication = "In *Signal Image Technology & Internet Systems (SITIS)*, IEEE."

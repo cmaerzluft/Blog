@@ -35,11 +35,11 @@ filter_default = 0
 
 [[filter]]
   name = "Deep Learning"
-  tag = "Deep Learning"
+  tag = ""
 
 [[filter]]
   name = "Other"
-  tag = "Demo"
+  tag = ""
 
 +++
 
