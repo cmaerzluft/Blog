@@ -1,0 +1,70 @@
+---
+title: Welcome
+author: Christopher Maerzluft
+date: '2018-08-29'
+slug: welcome
+categories: ["R"]
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<div id="this-website-is-currently-in-the-works." class="section level2">
+<h2>This website is currently in the works.</h2>
+<p>I want to create a blog.<br />
+I have tons of material.</p>
+<p>Just need time setting it up.</p>
+<p>Stay tuned!</p>
+<pre class="r"><code># Define a deck of cards
+values &lt;- c(&quot;Ace&quot;, 2:10, &quot;Jack&quot;, &quot;Queen&quot;, &quot;King&quot;)
+suits &lt;- c(&quot;Hearts&quot;, &quot;Diamonds&quot;, &quot;Clubs&quot;, &quot;Spades&quot;)
+deck &lt;- expand.grid(values, suits, stringsAsFactors = FALSE)
+colnames(deck) &lt;- c(&quot;Value&quot;, &quot;Suit&quot;)
+
+# Define the game
+n.players &lt;- 8
+n.decks &lt;- 1
+
+# Define the final deck based on n.decks
+final.deck &lt;- do.call(&quot;rbind&quot;, replicate(n.decks, deck, simplify = FALSE))
+
+# Deal first card
+first.card &lt;- lapply(1:n.players, FUN = function(x) {
+  deal &lt;- sample(nrow(final.deck), 1)
+  player &lt;- final.deck[deal, ]
+  final.deck &lt;&lt;- final.deck[-deal, ]
+  
+  player
+})
+# Deal second card
+dealt.hands &lt;- lapply(1:n.players, FUN = function(x, first.card) {
+  player1 &lt;- first.card[[x]]
+  
+  deal &lt;- sample(nrow(final.deck), 1)
+  player &lt;- final.deck[deal, ]
+  final.deck &lt;&lt;- final.deck[-deal, ]
+  
+  hand &lt;- rbind(player1, player)
+  
+  hand
+}, first.card = first.card)
+
+# Burn one card
+burn &lt;- sample(nrow(final.deck), 1)
+final.deck &lt;- final.deck[-burn, ]
+
+# Flop
+flop &lt;- sample(nrow(final.deck), 3)
+final.deck &lt;- final.deck[-flop, ]
+
+# Burn one card
+burn &lt;- sample(nrow(final.deck), 1)
+final.deck &lt;- final.deck[-burn, ]
+
+# Turn
+turn &lt;- sample(nrow(final.deck), 3)
+final.deck &lt;- final.deck[-turn, ]</code></pre>
+</div>
