@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 2.4.0">
   <meta name="generator" content="Hugo 0.48" />
-  <meta name="author" content="Lena Smith">
+  <meta name="author" content="Christopher Maerzluft">
 
   
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="theme-color" content="#0095eb">
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
   
 
   
@@ -49,9 +49,7 @@
     
       
       
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css" crossorigin="anonymous">
       
     
 
@@ -71,11 +69,25 @@
 
   
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-124600408-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
   
 
   
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Academic">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Not Just a Statistic">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Not Just a Statistic">
   
 
   <link rel="manifest" href="/site.webmanifest">
@@ -86,12 +98,9 @@
 
   <meta property="twitter:card" content="summary_large_image">
   
-  <meta property="twitter:site" content="@GeorgeCushen">
-  <meta property="twitter:creator" content="@GeorgeCushen">
-  
-  <meta property="og:site_name" content="Academic">
+  <meta property="og:site_name" content="Not Just a Statistic">
   <meta property="og:url" content="/project/deep-learning/">
-  <meta property="og:title" content="Deep Learning | Academic">
+  <meta property="og:title" content="Deep Learning | Not Just a Statistic">
   <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><meta property="og:image" content="/img/headers/bubbles-wide.jpg">
   <meta property="og:locale" content="en-us">
   
@@ -104,10 +113,10 @@
 
   
 
-  <title>Deep Learning | Academic</title>
+  <title>Deep Learning | Not Just a Statistic</title>
 
 </head>
-<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" class="dark">
 
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
   <div class="container">
@@ -123,7 +132,7 @@
         <span class="icon-bar"></span>
       </button>
       
-      <a class="navbar-brand" href="/">Academic</a>
+      <a class="navbar-brand" href="/">Not Just a Statistic</a>
     </div>
 
     
@@ -339,12 +348,6 @@
     
 
 
-<div class="article-tags">
-  
-  <a class="label label-default" href="/tags/deep-learning/">Deep Learning</a>
-  
-</div>
-
 
 
 
@@ -361,51 +364,25 @@
       
       
       
-      
-        <h2>Talks</h2>
-        
-          <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/Event">
-  <i class="fa fa-calendar pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="/talk/example-talk/">Example Talk</a></span>
-  <div itemprop="startDate">
-    
-    Jun 1, 2030
-    
-      1:00 PM
-    
-  </div>
-  <div class="talk-metadata">
-    
-            Academic Theme Conference
-    
-  </div>
-  <div class="talk-links">
-    
-
-
-
-
-
-
-
-  
-  <a class="btn btn-primary btn-outline btn-xs" href="/project/deep-learning/">
-    Project
-  </a>
-  
-
-
-
-  </div>
-</div>
-
-        
       
     
 
   </div>
 </article>
 
+
+<div class="article-container article-widget">
+  <div class="post-nav">
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/project/example-external-project/" rel="prev">External Project</a>
+  </div>
+  
+</div>
+
+</div>
 
 
 <footer class="site-footer">
@@ -465,6 +442,15 @@
 
     
     
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
+    
 
     
     
@@ -479,9 +465,15 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
         
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
       
 
       
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
