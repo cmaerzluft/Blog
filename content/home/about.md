@@ -24,15 +24,15 @@ weight = 5
 
 [[education.courses]]
   course = "M.S. Applied Data Science"
-  institution = "Syracuse"
-  year = "Anticipated 2020"
+  institution = "Syracuse University"
+  year = "Expected 2020"
  
 +++
 
 # Biography
 
-At UCLA, while studying Economics I stumbled upon a Statistics class and fell in love. I was drawn to the methods (particularly programming in R) and to range of fields I could now explore. The beauty of data science, to me, is the freedom it provides to explore questions not just in Economics but in Politics, in Sociology, in sports, and many other areas. Data science allows me to ask questions in any field and gives me the skills to answer those questions. I hope to use this blog for two purposes. The first purpose is primarily a self-serving one and will only be useful to the data scientists in the audience. 
+At UCLA, while studying Economics I stumbled upon a Statistics class and fell in love. I was drawn to the methods (particularly programming in R) and to the range of fields I could now explore. The beauty of data science, to me, is the freedom it provides to explore questions not just in Economics but in Politics, in Sociology, in sports, and many other areas. Data science allows me to ask questions in any field and gives me the skills to answer those questions. 
 
-I hope to use this site to document some of the more technical aspects of my job. There isn't always a guide for what I do and each problem can be done many ways - especially with respect to programming. I have often found help and sometimes even full solutions to coding challenges within a blog and I hope to return that help to someone else.
+Since graduating I have taken my passion to the RAND Corporation where I am currently a Research Programmer. While I work on a wide variety of projects, I have become quite experienced in questions related to recruiting. One area of data science that I have become quite adept at is the building and deployment of interactive tools built using the Shiny package in R.
 
-The second purpose of this blog is the primary reason I am creating it and is the opposite of the first purpose. While, sharing code and solving technical challenges is important, the primary goal of data science, the skill that separates an OK data scientist from a great one is the ability to share their work with non-data people. Above, I said "Data science allows me to ask questions in any field ... [and] to answer those questions", so I'm going to. When I can, I will explore concepts that are generally relevant to a larger audience and do my best to explain it and the data science that goes on behind it. Topics can include anything where data is available (though I will probably want to discuss certain topics and why they can't easily be examined from time to time as well). 
+While my professional life centers around data science and R, my personal life is a little bit more varied. My hobbies include running, cooking and going to Disneyland among many other things. I could go into great detail on all these areas of my life and I probably will later, but for now I just wanted to give a quick flavor for who I am.

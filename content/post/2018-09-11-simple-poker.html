@@ -1,0 +1,64 @@
+---
+title: Poker! I Barely Know her!
+author: Christopher Maerzluft
+date: '2018-09-11'
+slug: simple-poker
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<div id="if-i-were-a-betting-man" class="section level2">
+<h2>If I Were a Betting Man…</h2>
+<p>I recently listened to a story on the podcast for <a href="https://themoth.org/stories/the-big-things-you-dont-do">Moth Radio Hour</a>. The speaker, <a href="https://en.wikipedia.org/wiki/Annie_Duke">Annie Duke</a>, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. As a part of her story she mentioned that she first started playing poker when her <a href="https://en.wikipedia.org/wiki/Howard_Lederer">brother</a>, one of the other nine players at the high stakes game, on a small cocktail napkin gave her a small list of hands which she could play when she first started. He said, “stick to these hands and you will be fine”. As with most stories I hear, I wanted to know more.</p>
+<p>Now if you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules <a href="http://www.wsop.com/poker-games/texas-holdem/">here</a>. In that link you will even find a list of probabilities for being dealt certain grouping of pocket cards. What that list is missing though is the true value of the hands.</p>
+<p>The holy grail of Texas Hold’em is the royal flush. This hand comes from making a suited straight starting with a ten and finishing with an ace. The list of probabilities in the above link show that the probability of getting two cards that are suited and connected and help create royal flush (e.g. 10/Jack, Jack/Queen, etc.) is 1%. The probability of completing the royal flush is even higher: 0.000154%. In other words, if you are waiting for this hand, you are in the wrong game. So if this hand is so rare, which hands are more common but still worth playing which hands actually result in wins. If you were a world class poker player which hands would you rely on the most, which ones would you put on a small cocktail napkin?</p>
+</div>
+<div id="the-deal" class="section level2">
+<h2>The Deal</h2>
+<p>The answer to the question above can have many answers. For this analysis we are going to keep it simple. We are simply going to ask, which starting hole cards end up winning the most games in the long run. In order to do this, we will simulate a hand of poker with eight players. We will track what card each player has and who ends up winning if no player folds their hands. After this we will play another hand, and another, and another; we will do this thousands of times or more until we feel confident that we have found the hands most likely to result in wins.</p>
+<pre class="r"><code># Libraries Needed
+library(knitr)
+# Load Data
+load(&quot;~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Output/simulated_5000_games.Rdata&quot;)
+print(summary(games))</code></pre>
+<pre><code>##       iter        player_id    pocket_card1       pocket_card2      
+##  Min.   :   1   Min.   :1.00   Length:40000       Length:40000      
+##  1st Qu.:1251   1st Qu.:2.75   Class :character   Class :character  
+##  Median :2500   Median :4.50   Mode  :character   Mode  :character  
+##  Mean   :2500   Mean   :4.50                                        
+##  3rd Qu.:3750   3rd Qu.:6.25                                        
+##  Max.   :5000   Max.   :8.00                                        
+##   flop_card1         flop_card2         flop_card3       
+##  Length:40000       Length:40000       Length:40000      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##   turn_card          river_card        high_pocket     both_high_pocket
+##  Length:40000       Length:40000       Mode :logical   Mode :logical   
+##  Class :character   Class :character   FALSE:14942     FALSE:34223     
+##  Mode  :character   Mode  :character   TRUE :25058     TRUE :5777      
+##                                                                        
+##                                                                        
+##                                                                        
+##  suited_pocket   paired_pocket   value_distance   straight_pocket
+##  Mode :logical   Mode :logical   Min.   : 0.000   Mode :logical  
+##  FALSE:30653     FALSE:37667     1st Qu.: 2.000   FALSE:17800    
+##  TRUE :9347      TRUE :2333      Median : 4.000   TRUE :22200    
+##                                  Mean   : 3.962                  
+##                                  3rd Qu.: 6.000                  
+##                                  Max.   :11.000                  
+##  final_hand_points    final_hand          hand_place    winner       
+##  Min.   :9.880e+02   Length:40000       Min.   :1.0   Mode :logical  
+##  1st Qu.:1.009e+04   Class :character   1st Qu.:2.5   FALSE:34464    
+##  Median :1.023e+04   Mode  :character   Median :4.5   TRUE :5536     
+##  Mean   :7.663e+20                      Mean   :4.5                  
+##  3rd Qu.:1.022e+07                      3rd Qu.:6.5                  
+##  Max.   :1.000e+25                      Max.   :8.0</code></pre>
+</div>

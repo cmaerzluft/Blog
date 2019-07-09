@@ -129,8 +129,8 @@ enableGitInfo = false
   #   For the list of supported languages and styles, see:
   #   https://cdnjs.com/libraries/highlight.js/
   highlight = true
-  highlight_languages = ["r", "python"]
-  highlight_style = "color-brewer"
+  highlight_languages = ["r"]
+  highlight_style = "purebasic"
 
   # Enable native social sharing buttons?
   sharing = true

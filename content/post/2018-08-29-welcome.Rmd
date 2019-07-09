@@ -10,64 +10,12 @@ header:
   image: ''
 ---
 
-## This website is currently in the works.
+## The Idea.
 
-I want to create a blog.  
-I have tons of material.  
+Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore... So instead I am just writing this introduction and doing the fun stuff elsewhere. So the quick rundown is this: I hope to use this blog for two purposes. The first purpose is primarily a self-serving one and will only be useful to the data scientists in the audience. 
+
+I hope to use this site to document some of the more technical aspects of my job. There isn't always a guide for what I do and each problem can be done many ways - especially with respect to programming. I have often found help and sometimes even full solutions to coding challenges within a blog and I hope to return that help to someone else.
+
+The second purpose of this blog is the primary reason I am creating it and is the opposite of the first purpose. While, sharing code and solving technical challenges is important, the primary goal of data science, the skill that separates an OK data scientist from a great one is the ability to share their work with non-data people. In my biography section, I said "Data science allows me to ask questions in any field ... [and] to answer those questions", so I'm going to. When I can, I will explore concepts that are generally relevant to a larger audience and do my best to explain it and the data science that goes on behind it. Topics can include anything where data is available (though on occasion I will probably want to discuss certain topics and why they can't easily be examined from time to time as well). 
   
-Just need time setting it up.  
-  
-  
-Stay tuned!
-
-```{r, background = "#000000"}
-# Define a deck of cards
-values <- c("Ace", 2:10, "Jack", "Queen", "King")
-suits <- c("Hearts", "Diamonds", "Clubs", "Spades")
-deck <- expand.grid(values, suits, stringsAsFactors = FALSE)
-colnames(deck) <- c("Value", "Suit")
-
-# Define the game
-n.players <- 8
-n.decks <- 1
-
-# Define the final deck based on n.decks
-final.deck <- do.call("rbind", replicate(n.decks, deck, simplify = FALSE))
-
-# Deal first card
-first.card <- lapply(1:n.players, FUN = function(x) {
-  deal <- sample(nrow(final.deck), 1)
-  player <- final.deck[deal, ]
-  final.deck <<- final.deck[-deal, ]
-  
-  player
-})
-# Deal second card
-dealt.hands <- lapply(1:n.players, FUN = function(x, first.card) {
-  player1 <- first.card[[x]]
-  
-  deal <- sample(nrow(final.deck), 1)
-  player <- final.deck[deal, ]
-  final.deck <<- final.deck[-deal, ]
-  
-  hand <- rbind(player1, player)
-  
-  hand
-}, first.card = first.card)
-
-# Burn one card
-burn <- sample(nrow(final.deck), 1)
-final.deck <- final.deck[-burn, ]
-
-# Flop
-flop <- sample(nrow(final.deck), 3)
-final.deck <- final.deck[-flop, ]
-
-# Burn one card
-burn <- sample(nrow(final.deck), 1)
-final.deck <- final.deck[-burn, ]
-
-# Turn
-turn <- sample(nrow(final.deck), 3)
-final.deck <- final.deck[-turn, ]
-```
+So... Thanks for being here and all that. Now, let's have some fun. 

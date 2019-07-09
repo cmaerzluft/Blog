@@ -11,11 +11,70 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Test</title>
-      <link>/post/test/</link>
-      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Poker! I Barely Know her!</title>
+      <link>/post/simple-poker/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/test/</guid>
+      <guid>/post/simple-poker/</guid>
+      <description>&lt;div id=&#34;if-i-were-a-betting-man&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;If I Were a Betting Man…&lt;/h2&gt;
+&lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, on a small cocktail napkin gave her a small list of hands which she could play when she first started. He said, “stick to these hands and you will be fine”. As with most stories I hear, I wanted to know more.&lt;/p&gt;
+&lt;p&gt;Now if you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. In that link you will even find a list of probabilities for being dealt certain grouping of pocket cards. What that list is missing though is the true value of the hands.&lt;/p&gt;
+&lt;p&gt;The holy grail of Texas Hold’em is the royal flush. This hand comes from making a suited straight starting with a ten and finishing with an ace. The list of probabilities in the above link show that the probability of getting two cards that are suited and connected and help create royal flush (e.g. 10/Jack, Jack/Queen, etc.) is 1%. The probability of completing the royal flush is even higher: 0.000154%. In other words, if you are waiting for this hand, you are in the wrong game. So if this hand is so rare, which hands are more common but still worth playing which hands actually result in wins. If you were a world class poker player which hands would you rely on the most, which ones would you put on a small cocktail napkin?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-deal&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Deal&lt;/h2&gt;
+&lt;p&gt;The answer to the question above can have many answers. For this analysis we are going to keep it simple. We are simply going to ask, which starting hole cards end up winning the most games in the long run. In order to do this, we will simulate a hand of poker with eight players. We will track what card each player has and who ends up winning if no player folds their hands. After this we will play another hand, and another, and another; we will do this thousands of times or more until we feel confident that we have found the hands most likely to result in wins.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Libraries Needed
+library(knitr)
+# Load Data
+load(&amp;quot;~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Output/simulated_5000_games.Rdata&amp;quot;)
+print(summary(games))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       iter        player_id    pocket_card1       pocket_card2      
+##  Min.   :   1   Min.   :1.00   Length:40000       Length:40000      
+##  1st Qu.:1251   1st Qu.:2.75   Class :character   Class :character  
+##  Median :2500   Median :4.50   Mode  :character   Mode  :character  
+##  Mean   :2500   Mean   :4.50                                        
+##  3rd Qu.:3750   3rd Qu.:6.25                                        
+##  Max.   :5000   Max.   :8.00                                        
+##   flop_card1         flop_card2         flop_card3       
+##  Length:40000       Length:40000       Length:40000      
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##   turn_card          river_card        high_pocket     both_high_pocket
+##  Length:40000       Length:40000       Mode :logical   Mode :logical   
+##  Class :character   Class :character   FALSE:14942     FALSE:34223     
+##  Mode  :character   Mode  :character   TRUE :25058     TRUE :5777      
+##                                                                        
+##                                                                        
+##                                                                        
+##  suited_pocket   paired_pocket   value_distance   straight_pocket
+##  Mode :logical   Mode :logical   Min.   : 0.000   Mode :logical  
+##  FALSE:30653     FALSE:37667     1st Qu.: 2.000   FALSE:17800    
+##  TRUE :9347      TRUE :2333      Median : 4.000   TRUE :22200    
+##                                  Mean   : 3.962                  
+##                                  3rd Qu.: 6.000                  
+##                                  Max.   :11.000                  
+##  final_hand_points    final_hand          hand_place    winner       
+##  Min.   :9.880e+02   Length:40000       Min.   :1.0   Mode :logical  
+##  1st Qu.:1.009e+04   Class :character   1st Qu.:2.5   FALSE:34464    
+##  Median :1.023e+04   Mode  :character   Median :4.5   TRUE :5536     
+##  Mean   :7.663e+20                      Mean   :4.5                  
+##  3rd Qu.:1.022e+07                      3rd Qu.:6.5                  
+##  Max.   :1.000e+25                      Max.   :8.0&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Prospective Outcome Assessment for Alternative Recruit Selection Policies</title>
+      <link>/publication/prospective-outcome-assessment/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/prospective-outcome-assessment/</guid>
       <description></description>
     </item>
     
@@ -25,63 +84,23 @@
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/welcome/</guid>
-      <description>&lt;div id=&#34;this-website-is-currently-in-the-works.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;This website is currently in the works.&lt;/h2&gt;
-&lt;p&gt;I want to create a blog.&lt;br /&gt;
-I have tons of material.&lt;/p&gt;
-&lt;p&gt;Just need time setting it up.&lt;/p&gt;
-&lt;p&gt;Stay tuned!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Define a deck of cards
-values &amp;lt;- c(&amp;quot;Ace&amp;quot;, 2:10, &amp;quot;Jack&amp;quot;, &amp;quot;Queen&amp;quot;, &amp;quot;King&amp;quot;)
-suits &amp;lt;- c(&amp;quot;Hearts&amp;quot;, &amp;quot;Diamonds&amp;quot;, &amp;quot;Clubs&amp;quot;, &amp;quot;Spades&amp;quot;)
-deck &amp;lt;- expand.grid(values, suits, stringsAsFactors = FALSE)
-colnames(deck) &amp;lt;- c(&amp;quot;Value&amp;quot;, &amp;quot;Suit&amp;quot;)
-
-# Define the game
-n.players &amp;lt;- 8
-n.decks &amp;lt;- 1
-
-# Define the final deck based on n.decks
-final.deck &amp;lt;- do.call(&amp;quot;rbind&amp;quot;, replicate(n.decks, deck, simplify = FALSE))
-
-# Deal first card
-first.card &amp;lt;- lapply(1:n.players, FUN = function(x) {
-  deal &amp;lt;- sample(nrow(final.deck), 1)
-  player &amp;lt;- final.deck[deal, ]
-  final.deck &amp;lt;&amp;lt;- final.deck[-deal, ]
-  
-  player
-})
-# Deal second card
-dealt.hands &amp;lt;- lapply(1:n.players, FUN = function(x, first.card) {
-  player1 &amp;lt;- first.card[[x]]
-  
-  deal &amp;lt;- sample(nrow(final.deck), 1)
-  player &amp;lt;- final.deck[deal, ]
-  final.deck &amp;lt;&amp;lt;- final.deck[-deal, ]
-  
-  hand &amp;lt;- rbind(player1, player)
-  
-  hand
-}, first.card = first.card)
-
-# Burn one card
-burn &amp;lt;- sample(nrow(final.deck), 1)
-final.deck &amp;lt;- final.deck[-burn, ]
-
-# Flop
-flop &amp;lt;- sample(nrow(final.deck), 3)
-final.deck &amp;lt;- final.deck[-flop, ]
-
-# Burn one card
-burn &amp;lt;- sample(nrow(final.deck), 1)
-final.deck &amp;lt;- final.deck[-burn, ]
-
-# Turn
-turn &amp;lt;- sample(nrow(final.deck), 3)
-final.deck &amp;lt;- final.deck[-turn, ]&lt;/code&gt;&lt;/pre&gt;
+      <description>&lt;div id=&#34;the-idea.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Idea.&lt;/h2&gt;
+&lt;p&gt;Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… So instead I am just writing this introduction and doing the fun stuff elsewhere. So the quick rundown is this: I hope to use this blog for two purposes. The first purpose is primarily a self-serving one and will only be useful to the data scientists in the audience.&lt;/p&gt;
+&lt;p&gt;I hope to use this site to document some of the more technical aspects of my job. There isn’t always a guide for what I do and each problem can be done many ways - especially with respect to programming. I have often found help and sometimes even full solutions to coding challenges within a blog and I hope to return that help to someone else.&lt;/p&gt;
+&lt;p&gt;The second purpose of this blog is the primary reason I am creating it and is the opposite of the first purpose. While, sharing code and solving technical challenges is important, the primary goal of data science, the skill that separates an OK data scientist from a great one is the ability to share their work with non-data people. In my biography section, I said “Data science allows me to ask questions in any field … [and] to answer those questions”, so I’m going to. When I can, I will explore concepts that are generally relevant to a larger audience and do my best to explain it and the data science that goes on behind it. Topics can include anything where data is available (though on occasion I will probably want to discuss certain topics and why they can’t easily be examined from time to time as well).&lt;/p&gt;
+&lt;p&gt;So… Thanks for being here and all that. Now, let’s have some fun.&lt;/p&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Resources Required to Meet the U.S. Army&#39;s Enlisted Recruiting Requirements Under Alternative Recruiting Goals, Conditions, and Eligibility Policies</title>
+      <link>/publication/resources-required/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/resources-required/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -92,6 +111,24 @@ final.deck &amp;lt;- final.deck[-turn, ]&lt;/code&gt;&lt;/pre&gt;
       <guid>/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Strategic Planning Tools for the Army Senior Reserve Officers&#39; Training Corps Program</title>
+      <link>/publication/pet-and-set/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/pet-and-set/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Potential Economic Effects of Brexit: Implications for the United Kingdom, European Union, and United States</title>
+      <link>/publication/brexit-tool/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/brexit-tool/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -129,214 +166,6 @@ final.deck &amp;lt;- final.deck[-turn, ]&lt;/code&gt;&lt;/pre&gt;
       
       <guid>/project/example-external-project/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Ocean&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Dark&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Coffee theme with Playfair font&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;1950s&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-  &lt;/a&gt;
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 -0700</pubDate>
-      
-      <guid>/publication/person-re-identification/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 -0700</pubDate>
-      
-      <guid>/publication/clothing-search/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

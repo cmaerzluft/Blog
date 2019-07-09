@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4 on Not Just a Statistic</title>
+    <link>/publication_types/4/</link>
+    <description>Recent content in 4 on Not Just a Statistic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 -0700</lastBuildDate>
+    
+	<atom:link href="/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prospective Outcome Assessment for Alternative Recruit Selection Policies</title>
+      <link>/publication/prospective-outcome-assessment/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/prospective-outcome-assessment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resources Required to Meet the U.S. Army&#39;s Enlisted Recruiting Requirements Under Alternative Recruiting Goals, Conditions, and Eligibility Policies</title>
+      <link>/publication/resources-required/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/resources-required/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strategic Planning Tools for the Army Senior Reserve Officers&#39; Training Corps Program</title>
+      <link>/publication/pet-and-set/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 -0700</pubDate>
+      
+      <guid>/publication/pet-and-set/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

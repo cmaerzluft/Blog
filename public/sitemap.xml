@@ -4,8 +4,16 @@
     
     <url>
     
-      <loc>/post/test/</loc>
-      <lastmod>2018-08-30T00:00:00+00:00</lastmod>
+      <loc>/post/simple-poker/</loc>
+      <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/prospective-outcome-assessment/</loc>
+      <lastmod>2018-09-01T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -20,8 +28,32 @@
     
     <url>
     
+      <loc>/publication/resources-required/</loc>
+      <lastmod>2018-07-01T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/privacy/</loc>
       <lastmod>2018-06-28T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/pet-and-set/</loc>
+      <lastmod>2017-07-01T00:00:00-07:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/brexit-tool/</loc>
+      <lastmod>2017-06-01T00:00:00-07:00</lastmod>
     </url>
     
   
@@ -76,24 +108,18 @@
     
     <url>
     
-      <loc>/post/getting-started/</loc>
-      <lastmod>2018-01-13T00:00:00-08:00</lastmod>
+      <loc>/publication_types/0/</loc>
+      <lastmod>2017-06-01T00:00:00-07:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/publication/person-re-identification/</loc>
-      <lastmod>2015-09-01T00:00:00-07:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/publication/clothing-search/</loc>
-      <lastmod>2013-07-01T00:00:00-07:00</lastmod>
+      <loc>/publication_types/4/</loc>
+      <lastmod>2018-09-01T00:00:00-07:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -127,6 +153,7 @@
     <url>
     
       <loc>/publication_types/</loc>
+      <lastmod>2017-06-01T00:00:00-07:00</lastmod>
       <priority>0</priority>
     </url>
     

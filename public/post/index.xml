@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Test</title>
-      <link>/post/test/</link>
-      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      <title>Poker! I Barely Know her!</title>
+      <link>/post/simple-poker/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/test/</guid>
-      <description></description>
+      <guid>/post/simple-poker/</guid>
+      <description>If I Were a Betting Man… I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. As a part of her story she mentioned that she first started playing poker when her brother, one of the other nine players at the high stakes game, on a small cocktail napkin gave her a small list of hands which she could play when she first started.</description>
     </item>
     
     <item>
@@ -27,23 +27,7 @@
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/welcome/</guid>
-      <description>This website is currently in the works. I want to create a blog.
-I have tons of material.
-Just need time setting it up.
-Stay tuned!
-# Define a deck of cards values &amp;lt;- c(&amp;quot;Ace&amp;quot;, 2:10, &amp;quot;Jack&amp;quot;, &amp;quot;Queen&amp;quot;, &amp;quot;King&amp;quot;) suits &amp;lt;- c(&amp;quot;Hearts&amp;quot;, &amp;quot;Diamonds&amp;quot;, &amp;quot;Clubs&amp;quot;, &amp;quot;Spades&amp;quot;) deck &amp;lt;- expand.grid(values, suits, stringsAsFactors = FALSE) colnames(deck) &amp;lt;- c(&amp;quot;Value&amp;quot;, &amp;quot;Suit&amp;quot;) # Define the game n.players &amp;lt;- 8 n.decks &amp;lt;- 1 # Define the final deck based on n.</description>
-    </item>
-    
-    <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 -0700</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>Academic is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. Check out the latest demo of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the Quick Start guide or take a look at the Release Notes.
-
-Key features:
- Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
+      <description>The Idea. Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… So instead I am just writing this introduction and doing the fun stuff elsewhere. So the quick rundown is this: I hope to use this blog for two purposes.</description>
     </item>
     
   </channel>

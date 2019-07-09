@@ -12,59 +12,10 @@ header:
 
 
 
-<div id="this-website-is-currently-in-the-works." class="section level2">
-<h2>This website is currently in the works.</h2>
-<p>I want to create a blog.<br />
-I have tons of material.</p>
-<p>Just need time setting it up.</p>
-<p>Stay tuned!</p>
-<pre class="r"><code># Define a deck of cards
-values &lt;- c(&quot;Ace&quot;, 2:10, &quot;Jack&quot;, &quot;Queen&quot;, &quot;King&quot;)
-suits &lt;- c(&quot;Hearts&quot;, &quot;Diamonds&quot;, &quot;Clubs&quot;, &quot;Spades&quot;)
-deck &lt;- expand.grid(values, suits, stringsAsFactors = FALSE)
-colnames(deck) &lt;- c(&quot;Value&quot;, &quot;Suit&quot;)
-
-# Define the game
-n.players &lt;- 8
-n.decks &lt;- 1
-
-# Define the final deck based on n.decks
-final.deck &lt;- do.call(&quot;rbind&quot;, replicate(n.decks, deck, simplify = FALSE))
-
-# Deal first card
-first.card &lt;- lapply(1:n.players, FUN = function(x) {
-  deal &lt;- sample(nrow(final.deck), 1)
-  player &lt;- final.deck[deal, ]
-  final.deck &lt;&lt;- final.deck[-deal, ]
-  
-  player
-})
-# Deal second card
-dealt.hands &lt;- lapply(1:n.players, FUN = function(x, first.card) {
-  player1 &lt;- first.card[[x]]
-  
-  deal &lt;- sample(nrow(final.deck), 1)
-  player &lt;- final.deck[deal, ]
-  final.deck &lt;&lt;- final.deck[-deal, ]
-  
-  hand &lt;- rbind(player1, player)
-  
-  hand
-}, first.card = first.card)
-
-# Burn one card
-burn &lt;- sample(nrow(final.deck), 1)
-final.deck &lt;- final.deck[-burn, ]
-
-# Flop
-flop &lt;- sample(nrow(final.deck), 3)
-final.deck &lt;- final.deck[-flop, ]
-
-# Burn one card
-burn &lt;- sample(nrow(final.deck), 1)
-final.deck &lt;- final.deck[-burn, ]
-
-# Turn
-turn &lt;- sample(nrow(final.deck), 3)
-final.deck &lt;- final.deck[-turn, ]</code></pre>
+<div id="the-idea." class="section level2">
+<h2>The Idea.</h2>
+<p>Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… So instead I am just writing this introduction and doing the fun stuff elsewhere. So the quick rundown is this: I hope to use this blog for two purposes. The first purpose is primarily a self-serving one and will only be useful to the data scientists in the audience.</p>
+<p>I hope to use this site to document some of the more technical aspects of my job. There isn’t always a guide for what I do and each problem can be done many ways - especially with respect to programming. I have often found help and sometimes even full solutions to coding challenges within a blog and I hope to return that help to someone else.</p>
+<p>The second purpose of this blog is the primary reason I am creating it and is the opposite of the first purpose. While, sharing code and solving technical challenges is important, the primary goal of data science, the skill that separates an OK data scientist from a great one is the ability to share their work with non-data people. In my biography section, I said “Data science allows me to ask questions in any field … [and] to answer those questions”, so I’m going to. When I can, I will explore concepts that are generally relevant to a larger audience and do my best to explain it and the data science that goes on behind it. Topics can include anything where data is available (though on occasion I will probably want to discuss certain topics and why they can’t easily be examined from time to time as well).</p>
+<p>So… Thanks for being here and all that. Now, let’s have some fun.</p>
 </div>
