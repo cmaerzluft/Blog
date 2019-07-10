@@ -26,6 +26,6 @@ The answer to the question above can have many answers. For this analysis we are
 # Libraries Needed
 library(knitr)
 # Load Data
-load("~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Output/simulated_5000_games.Rdata")
+load("~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Data/simulated_100k_games.Rdata")
 print(summary(games))
 ```
