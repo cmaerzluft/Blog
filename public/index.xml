@@ -91,8 +91,8 @@ print(summary(games))&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/welcome/</guid>
-      <description>&lt;div id=&#34;the-idea.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Idea.&lt;/h2&gt;
+      <description>&lt;div id=&#34;the-idea&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Idea&lt;/h2&gt;
 &lt;p&gt;Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science by reaching two types of readers.&lt;/p&gt;
 &lt;p&gt;The first group I would like to reach is everyone. Data science is used to answer pretty much everything these days. I want to show people how data science is done on real data and real problems as well as explain why it works. To be clear, this blog is about the methods and tools behind data science, but I aspire to write and discuss topics in a way that is accessible to all. “If you can’t explain it simply, you don’t really understand it” - &lt;a href=&#34;https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it&#34;&gt;Richard Feynman&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The second reader I would like to reach are fellow data scientists. While I want everyone to understand what is going on in general, I want the people who are interested to be able to see under the hood and learn the more intricate details. If you are interested in the code and the technical aspects, I hope that this is the place for you more so than for the average person.&lt;/p&gt;
