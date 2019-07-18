@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Not Just a Statistic</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Not Just a Statistic</description>
+    <title>Texas HoldEm on Not Just a Statistic</title>
+    <link>/tags/texas-holdem/</link>
+    <description>Recent content in Texas HoldEm on Not Just a Statistic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/texas-holdem/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>/post/intro-poker-data/</guid>
       <description>Poker! I Barely Know her! I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules here. As a part of her story she mentioned that she first started playing poker when her brother, one of the other nine players at the high stakes game, encouraged her to start playing professionally.</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>/post/welcome/</link>
-      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/welcome/</guid>
-      <description>The Idea Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science by reaching two types of readers.</description>
     </item>
     
   </channel>

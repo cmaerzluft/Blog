@@ -6,74 +6,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Poker! I Barely Know her!</title>
-      <link>/post/simple-poker/</link>
-      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Texas Holdem. Intro to Data.</title>
+      <link>/post/intro-poker-data/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/simple-poker/</guid>
+      <guid>/post/intro-poker-data/</guid>
       <description>
 
 
-&lt;div id=&#34;if-i-were-a-betting-man&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;If I Were a Betting Man…&lt;/h2&gt;
-&lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, on a small cocktail napkin gave her a small list of hands which she could play when she first started. He said, “stick to these hands and you will be fine”. As with most stories I hear, I wanted to know more.&lt;/p&gt;
-&lt;p&gt;Now if you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. In that link you will even find a list of probabilities for being dealt certain grouping of pocket cards. What that list is missing though is the true value of the hands.&lt;/p&gt;
-&lt;p&gt;The holy grail of Texas Hold’em is the royal flush. This hand comes from making a suited straight starting with a ten and finishing with an ace. The list of probabilities in the above link show that the probability of getting two cards that are suited and connected and help create royal flush (e.g. 10/Jack, Jack/Queen, etc.) is 1%. The probability of completing the royal flush is even higher: 0.000154%. In other words, if you are waiting for this hand, you are in the wrong game. So if this hand is so rare, which hands are more common but still worth playing which hands actually result in wins. If you were a world class poker player which hands would you rely on the most, which ones would you put on a small cocktail napkin?&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-deal&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Deal&lt;/h2&gt;
-&lt;p&gt;The answer to the question above can have many answers. For this analysis we are going to keep it simple. We are simply going to ask, which starting hole cards end up winning the most games in the long run. In order to do this, we will simulate a hand of poker with eight players. We will track what card each player has and who ends up winning if no player folds their hands. After this we will play another hand, and another, and another; we will do this thousands of times or more until we feel confident that we have found the hands most likely to result in wins.&lt;/p&gt;
+&lt;div id=&#34;poker-i-barely-know-her&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Poker! I Barely Know her!&lt;/h2&gt;
+&lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” In the podcast she didn’t reveal what those hands were but this is the kind of problem data science is well &lt;strong&gt;&lt;em&gt;suited&lt;/em&gt;&lt;/strong&gt; (I already hate myself for saying that) to handle.&lt;br /&gt;
+&lt;img src=&#34;https://media1.tenor.com/images/4cfa9b4d02ae66bf35d64fe1846e385d/tenor.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In fact, Texas Hold’em can be used to study every facet of data science if we wanted to. You most likely expect this post to be used to explore the concept of probability, the most fundamental part of statistics, but I am not going to do that for this specific post. Instead, I want to focus on something much more mundane but just as vital to any data scientist.&lt;/p&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data&lt;/h3&gt;
+&lt;p&gt;Yep, it’s right there in the name. The joke within the data community is that data-science/statistics/economics/whatever-field-that-uses-data is actually only 10% analysis and 90% data cleaning and data management. All the probability knowledge in the world is useless to a data scientist without good data. As they say, “Garbage in, garbage out.”&lt;/p&gt;
+&lt;p&gt;Fortunately, finding good data really isn’t a matter of whether it &lt;a href=&#34;https://www.livescience.com/54094-how-big-is-the-internet.html&#34;&gt;exists&lt;/a&gt; or not. The real question is, do you have the time and/or money to put it in the form you need to perform the analysis you want? As an environment rich with oppotunities of data analysis the topic of poker has an incredibly large amount of data, some of it free and some of it for a price. If you google “&lt;a href=&#34;https://www.google.com/search?q=texas+holdem+data&#34;&gt;texas holdem data&lt;/a&gt;” the first two links, a StackExchange &lt;a href=&#34;https://poker.stackexchange.com/questions/881/publicly-available-poker-stats&#34;&gt;post&lt;/a&gt; and a Kaggle &lt;a href=&#34;https://www.kaggle.com/smeilz/poker-holdem-games&#34;&gt;dataset&lt;/a&gt;, are examples of great resources for finding data online. Now, we just need to decide if any of this data helps us answer which hands were on that napkin for Annie’s story.&lt;/p&gt;
+&lt;p&gt;Before we get to more complex analyses, I would like to build a naive understanding of the way Texas Hold’Em works. For the time being I want to know, if you take &lt;a href=&#34;http://www.firsttimepokerplayer.com/how-to-play/strategy/betting-guide/&#34;&gt;betting strategy&lt;/a&gt; (&lt;a href=&#34;https://math.mit.edu/~apost/courses/18.204_2018/Jingyu_Li_paper.pdf&#34;&gt;game theory&lt;/a&gt;) out of the equation which hands are more likely to win? In other words, how often do hands win when stacked up against every other hand. Unfortunately, none of the data in the links above are set up for this analysis. For one, I am cheap and don’t want to pay for any data but another reason is that many of the free data sets only give data on hands that were revealed at the end of a round. So if someone went all in and everyone else folded, the data might not tell us what anyone, even the person who won the pot, had at all. When we turn to the more complex question this won’t necessarily be a bad thing but for now we need to figure something else out. At this point there are only two alternatives; We can either turn this post around and go back to discussing probability and &lt;a href=&#34;http://mathforum.org/library/drmath/view/65306.html&#34;&gt;combinatorics&lt;/a&gt; or we can do something much more data science-y and just make everything up. &lt;img src=&#34;https://media.giphy.com/media/m7DEwkk9ID7ag/giphy.gif&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Libraries Needed
-library(knitr)
-# Load Data
-load(&amp;quot;~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Data/simulated_100k_games.Rdata&amp;quot;)
-print(summary(games))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##       iter          player_id    pocket_card1       pocket_card2      
-##  Min.   :     1   Min.   :1.00   Length:800000      Length:800000     
-##  1st Qu.: 25001   1st Qu.:2.75   Class :character   Class :character  
-##  Median : 50000   Median :4.50   Mode  :character   Mode  :character  
-##  Mean   : 50000   Mean   :4.50                                        
-##  3rd Qu.: 75000   3rd Qu.:6.25                                        
-##  Max.   :100000   Max.   :8.00                                        
-##   flop_card1         flop_card2         flop_card3       
-##  Length:800000      Length:800000      Length:800000     
-##  Class :character   Class :character   Class :character  
-##  Mode  :character   Mode  :character   Mode  :character  
-##                                                          
-##                                                          
-##                                                          
-##   turn_card          river_card        high_pocket     both_high_pocket
-##  Length:800000      Length:800000      Mode :logical   Mode :logical   
-##  Class :character   Class :character   FALSE:299079    FALSE:685274    
-##  Mode  :character   Mode  :character   TRUE :500921    TRUE :114726    
-##                                                                        
-##                                                                        
-##                                                                        
-##  suited_pocket   paired_pocket   value_distance  straight_pocket
-##  Mode :logical   Mode :logical   Min.   : 0.00   Mode :logical  
-##  FALSE:612163    FALSE:753041    1st Qu.: 2.00   FALSE:355980   
-##  TRUE :187837    TRUE :46959     Median : 4.00   TRUE :444020   
-##                                  Mean   : 3.96                  
-##                                  3rd Qu.: 6.00                  
-##                                  Max.   :11.00                  
-##  final_hand_points    final_hand         hand_type        
-##  Min.   :9.081e+08   Length:800000      Length:800000     
-##  1st Qu.:1.040e+10   Class :character   Class :character  
-##  Median :1.111e+10   Mode  :character   Mode  :character  
-##  Mean   :1.657e+10                                        
-##  3rd Qu.:2.121e+10                                        
-##  Max.   :9.141e+10                                        
-##   hand_name           hand_place      winner       
-##  Length:800000      Min.   :1.000   Mode :logical  
-##  Class :character   1st Qu.:2.000   FALSE:688698   
-##  Mode  :character   Median :4.000   TRUE :111302   
-##                     Mean   :4.357                  
-##                     3rd Qu.:6.000                  
-##                     Max.   :8.000&lt;/code&gt;&lt;/pre&gt;
+# library(knitr)
+# # Load Data
+# load(&amp;quot;~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Data/simulated_100k_games.Rdata&amp;quot;)
+# print(summary(games))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Talk to you soon.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
