@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Texas Holdem on Not Just a Statistic</title>
-    <link>/tags/texas-holdem/</link>
-    <description>Recent content in Texas Holdem on Not Just a Statistic</description>
+    <title>Analysis on Not Just a Statistic</title>
+    <link>/tags/analysis/</link>
+    <description>Recent content in Analysis on Not Just a Statistic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020</copyright>
     <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/texas-holdem/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/analysis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

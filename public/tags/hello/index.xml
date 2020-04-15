@@ -6,8 +6,8 @@
     <description>Recent content in Hello on Not Just a Statistic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2020</copyright>
+    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/hello/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,10 @@
     <item>
       <title>Welcome</title>
       <link>/post/welcome/</link>
-      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/welcome/</guid>
-      <description>The Idea Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science by reaching two types of readers.</description>
+      <description>The Idea. Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science and share with others the way I approach data science.</description>
     </item>
     
   </channel>
