@@ -1,7 +1,7 @@
 ---
 title: Welcome
 author: Christopher Maerzluft
-date: '2018-08-29'
+date: '2019-10-05'
 slug: welcome
 categories: []
 tags: ["Hello"]
@@ -10,14 +10,16 @@ header:
   image: ''
 ---
 
-## The Idea
+## The Idea.
 
-Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore... instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science by reaching two types of readers.  
+Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore... instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science and share with others the way I approach data science.
 
-The first group I would like to reach is everyone. Data science is used to answer pretty much everything these days. I want to show people how data science is done on real data and real problems as well as explain why it works. To be clear, this blog is about the methods and tools behind data science, but I aspire to write and discuss topics in a way that is accessible to all. "If you can't explain it simply, you don't really understand it" - [Richard Feynman](https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it).
+At a high level, data science is really a field comprised of two disciplines - statistics and computer science. Unfortunately, these two fields don't teach each other very well very often. This is somewhat understandable as both fields are rather large, but as data science grows more distinguished from its parents the average practionsher will need a more balanced approach to data science. At the moment, statisticians have the biggest ground to make up because computer scientists have designed algorithms that process such vast amounts of data they are able to arrive at near-human to super-human predictions without any need to understand the relationships within the data. Statisticians meanwhile make reasonably good models that are easy to interpret and quick to calculate. At the end of the day, most people are more interested in an accurate prediction than something they can understand and thus computer scientists have the advantage. Still, I suspect that the statisticians will be crucial to the ongoing development of data science as a field.
 
-The second reader I would like to reach are fellow data scientists. While I want everyone to understand what is going on in general, I want the people who are interested to be able to see under the hood and learn the more intricate details. If you are interested in the code and the technical aspects, I hope that this is the place for you more so than for the average person.  
+As for me, I hope to be someone that practices data science from both angles. I wish to develop sound statistical models that are taken advantage of using in well designed algorithms and code using the best technology for the job. I will use this blog to explore random topics that I find interesting: from poker to the stock market, and from developing AI that can beat simple games to predicting sporting event outcomes. As I explore these topics I will lay out how I research them and how I begin to build models; I will also describe how the code I write works and why I wrote it the way I did. I can't always promise to be the best coder or the best modeler though. In truth, this blog is really about giving me a systematic way to learn new methods and practices and I commit to continually learning and sharing what I learn with you the reader.
 
-Obviously, creating the type of content that reaches both these groups of people will be very difficult to create. I am really not sure how it will go. For one thing, as I am sure you may have already noticed, I am not the best writer in the world. It likely won't work the way I have idealized it in my head but, at the end of the day, I'm also doing all of this for a third group - me. I want to continue to learn and push my skills as a professional. Having this type of outlet gives me a product to work toward so that I can see my growth as a data scientist in practical term. If no one else reads any of these posts, I will still learn a lot and be better for it.
-  
-So... Thanks for being here and all that. Talk to you soon.
+Well, that's it for now. I hope you enjoy everything that comes next.
+
+Best,
+Chris
+

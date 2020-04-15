@@ -5,14 +5,14 @@
     <description>Recent content in Not Just a Statistic on Not Just a Statistic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2020</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Texas Holdem. Intro to Data.</title>
+      <title>Introduction to Texas Hold&#39;em</title>
       <link>/post/intro-poker-data/</link>
-      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/intro-poker-data/</guid>
       <description>
@@ -20,21 +20,101 @@
 
 &lt;div id=&#34;poker-i-barely-know-her&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Poker! I Barely Know her!&lt;/h2&gt;
-&lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” In the podcast she didn’t reveal what those hands were but this is the kind of problem data science is well &lt;strong&gt;&lt;em&gt;suited&lt;/em&gt;&lt;/strong&gt; (I already hate myself for saying that) to handle.&lt;br /&gt;
-&lt;img src=&#34;https://media1.tenor.com/images/4cfa9b4d02ae66bf35d64fe1846e385d/tenor.gif&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In fact, Texas Hold’em can be used to study every facet of data science if we wanted to. You most likely expect this post to be used to explore the concept of probability, the most fundamental part of statistics, but I am not going to do that for this specific post. Instead, I want to focus on something much more mundane but just as vital to any data scientist.&lt;/p&gt;
-&lt;div id=&#34;data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Data&lt;/h3&gt;
-&lt;p&gt;Yep, it’s right there in the name. The joke within the data community is that data-science/statistics/economics/whatever-field-that-uses-data is actually only 10% analysis and 90% data cleaning and data management. All the probability knowledge in the world is useless to a data scientist without good data. As they say, “Garbage in, garbage out.”&lt;/p&gt;
-&lt;p&gt;Fortunately, finding good data really isn’t a matter of whether it &lt;a href=&#34;https://www.livescience.com/54094-how-big-is-the-internet.html&#34;&gt;exists&lt;/a&gt; or not. The real question is, do you have the time and/or money to put it in the form you need to perform the analysis you want? As an environment rich with oppotunities of data analysis the topic of poker has an incredibly large amount of data, some of it free and some of it for a price. If you google “&lt;a href=&#34;https://www.google.com/search?q=texas+holdem+data&#34;&gt;texas holdem data&lt;/a&gt;” the first two links, a StackExchange &lt;a href=&#34;https://poker.stackexchange.com/questions/881/publicly-available-poker-stats&#34;&gt;post&lt;/a&gt; and a Kaggle &lt;a href=&#34;https://www.kaggle.com/smeilz/poker-holdem-games&#34;&gt;dataset&lt;/a&gt;, are examples of great resources for finding data online. Now, we just need to decide if any of this data helps us answer which hands were on that napkin for Annie’s story.&lt;/p&gt;
-&lt;p&gt;Before we get to more complex analyses, I would like to build a naive understanding of the way Texas Hold’Em works. For the time being I want to know, if you take &lt;a href=&#34;http://www.firsttimepokerplayer.com/how-to-play/strategy/betting-guide/&#34;&gt;betting strategy&lt;/a&gt; (&lt;a href=&#34;https://math.mit.edu/~apost/courses/18.204_2018/Jingyu_Li_paper.pdf&#34;&gt;game theory&lt;/a&gt;) out of the equation which hands are more likely to win? In other words, how often do hands win when stacked up against every other hand. Unfortunately, none of the data in the links above are set up for this analysis. For one, I am cheap and don’t want to pay for any data but another reason is that many of the free data sets only give data on hands that were revealed at the end of a round. So if someone went all in and everyone else folded, the data might not tell us what anyone, even the person who won the pot, had at all. When we turn to the more complex question this won’t necessarily be a bad thing but for now we need to figure something else out. At this point there are only two alternatives; We can either turn this post around and go back to discussing probability and &lt;a href=&#34;http://mathforum.org/library/drmath/view/65306.html&#34;&gt;combinatorics&lt;/a&gt; or we can do something much more data science-y and just make everything up. &lt;img src=&#34;https://media.giphy.com/media/m7DEwkk9ID7ag/giphy.gif&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Libraries Needed
-# library(knitr)
-# # Load Data
-# load(&amp;quot;~/Desktop/Miscellaneous/Data Blog/TexasHoldEm/Data/simulated_100k_games.Rdata&amp;quot;)
-# print(summary(games))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Talk to you soon.&lt;/p&gt;
+&lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15 minute episode.&lt;/p&gt;
+&lt;p&gt;Casino games are a great way of introducing people to basic statistical concepts such as probability but poker allows us to explore data science in ways that other games can’t. Anyone who is the least bit familiar with poker will tell you that the game requires skill. So the challenge for this series then is to learn through data science methodology the skills necessary to be &lt;em&gt;good&lt;/em&gt; at poker. This is only part 1 of the series and I’m not sure how long it will go or even where it will ultimately go so for now, I am just going to start where Annie did: If am going to begin playing Texas Hold’em, what are the best hands to start out with?&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;start-at-the-beginning&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Start at the Beginning&lt;/h2&gt;
+&lt;p&gt;There are three ways to approach this question. The first is to break out the good Ol’ &lt;a href=&#34;http://www.numericana.com/answer/counting.htm#stud7&#34;&gt;combinatorics&lt;/a&gt; and attempt to calculate the probabilities by hand but that honestly sounds horrible. The second option would be to collect real &lt;a href=&#34;https://poker.stackexchange.com/questions/881/publicly-available-poker-stats&#34;&gt;data&lt;/a&gt;. However, the nature of poker has created an environment where complete data costs money to get access and free data is censored in ways that aren’t ideal for starting out. This just leaves the last option which is only available to us due to the simplicity of poker - simulate the data we need. Eventually we will need to work with the real data as we can’t simulate every aspect of poker, such as betting strategy, without real data but I think that building a simulation of Texas Hold’em will help inform our analysis of the real data which will in turn feed back into our simulation. I will save a post about how to simulate this data for a future post.&lt;/p&gt;
+&lt;p&gt;One of the great things about simulating data is that we can control the data in nearly every way imaginable. Obviously, we can control how much data we will create, and we are only contrained by our computer’s memory limitations and our patience. Sample size is very important when dealing with data - especially data that has such a large number of potential outcomes (There are 133,784,560 possible hand combinations in 7 card poker). For this post we will generate one million rounds of poker. We can also control how many players there are in each round. Later on we will find that the number of players will impact how the likelihood of our outcomes. Generally speaking the number of players in a game can range from two (Heads-up Poker) up to ten but after a short &lt;a href=&#34;https://www.pokernews.com/news/2018/12/the-perfect-poker-tournament-part-1-how-many-players-32793.htm&#34;&gt;Google&lt;/a&gt;, it seems that eight is more of the ideal starting number of players. For this analysis, unless stated otherwise, we will use eight players. At one million rounds and eight players we will ultimately have eight million unique hands of poker to explore.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;getting-a-baseline&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Getting a Baseline&lt;/h2&gt;
+&lt;p&gt;Having created our dataset, a good first step is to make sure our data aligns with the expected results from the theoretical probabilistic model. The next table shows the &lt;a href=&#34;https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_7-card_poker_hands&#34;&gt;expected distribution&lt;/a&gt; of final hands verse the estimated distribution from our simulated data. If the Expected results and Estimated results were significantly different we would worry that either our coding was wrong or that we weren’t working with enough data. The former would require us to find the error in the code but the latter we can deal with (and will explore in a future post). Fortunately, the results line up really well with our eight millions hands of poker.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Hand&lt;/th&gt;
+&lt;th&gt;Expected&lt;/th&gt;
+&lt;th&gt;Estimated&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;Straight Flush&lt;/td&gt;
+&lt;td&gt;0.0311%&lt;/td&gt;
+&lt;td&gt;0.0000%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;Four of a Kind&lt;/td&gt;
+&lt;td&gt;0.168%&lt;/td&gt;
+&lt;td&gt;0.1900%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;Full House&lt;/td&gt;
+&lt;td&gt;2.60%&lt;/td&gt;
+&lt;td&gt;2.4400%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;Flush&lt;/td&gt;
+&lt;td&gt;3.03%&lt;/td&gt;
+&lt;td&gt;2.8000%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;Straight&lt;/td&gt;
+&lt;td&gt;4.62%&lt;/td&gt;
+&lt;td&gt;4.7200%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;Three of a Kind&lt;/td&gt;
+&lt;td&gt;4.83%&lt;/td&gt;
+&lt;td&gt;4.8200%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;Two Pair&lt;/td&gt;
+&lt;td&gt;23.5%&lt;/td&gt;
+&lt;td&gt;23.1800%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;One Pair&lt;/td&gt;
+&lt;td&gt;43.8%&lt;/td&gt;
+&lt;td&gt;44.3000%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;High Card&lt;/td&gt;
+&lt;td&gt;17.4%&lt;/td&gt;
+&lt;td&gt;17.5500%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These are how often these hands are created (assuming people all stay in) but how often do these hands win overall and given the person has them Now is time to show differences in results between the different number of players&lt;/p&gt;
+&lt;p&gt;This also raises the question of: if I have a good hand what am I mostly likely to lose to?&lt;/p&gt;
+&lt;p&gt;These all help us think of the end strategy but we still haven’t answered the question of where to start&lt;/p&gt;
+&lt;p&gt;What should we expect to look for (suited, paired, close together)&lt;/p&gt;
+&lt;p&gt;distribution of pocket cards is easy to calculate so not wasting time on plot&lt;/p&gt;
+&lt;p&gt;which combos lead to win most often (8 players)&lt;/p&gt;
+&lt;p&gt;which combos lead to win most often 2-10 player plot&lt;/p&gt;
+&lt;p&gt;conclusion&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>/post/welcome/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/welcome/</guid>
+      <description>
+
+
+&lt;div id=&#34;the-idea.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Idea.&lt;/h2&gt;
+&lt;p&gt;Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science and share with others the way I approach data science.&lt;/p&gt;
+&lt;p&gt;At a high level, data science is really a field comprised of two disciplines - statistics and computer science. Unfortunately, these two fields don’t teach each other very well very often. This is somewhat understandable as both fields are rather large, but as data science grows more distinguished from its parents the average practionsher will need a more balanced approach to data science. At the moment, statisticians have the biggest ground to make up because computer scientists have designed algorithms that process such vast amounts of data they are able to arrive at near-human to super-human predictions without any need to understand the relationships within the data. Statisticians meanwhile make reasonably good models that are easy to interpret and quick to calculate. At the end of the day, most people are more interested in an accurate prediction than something they can understand and thus computer scientists have the advantage. Still, I suspect that the statisticians will be crucial to the ongoing development of data science as a field.&lt;/p&gt;
+&lt;p&gt;As for me, I hope to be someone that practices data science from both angles. I wish to develop sound statistical models that are taken advantage of using in well designed algorithms and code using the best technology for the job. I will use this blog to explore random topics that I find interesting: from poker to the stock market, and from developing AI that can beat simple games to predicting sporting event outcomes. As I explore these topics I will lay out how I research them and how I begin to build models; I will also describe how the code I write works and why I wrote it the way I did. I can’t always promise to be the best coder or the best modeler though. In truth, this blog is really about giving me a systematic way to learn new methods and practices and I commit to continually learning and sharing what I learn with you the reader.&lt;/p&gt;
+&lt;p&gt;Well, that’s it for now. I hope you enjoy everything that comes next.&lt;/p&gt;
+&lt;p&gt;Best, Chris&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -46,26 +126,6 @@
       
       <guid>/publication/prospective-outcome-assessment/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>/post/welcome/</link>
-      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/welcome/</guid>
-      <description>
-
-
-&lt;div id=&#34;the-idea&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Idea&lt;/h2&gt;
-&lt;p&gt;Welcome to my first blog entry! I was going to do a quick introduction followed by an equally quick mini-analysis but then I started doing said analysis and it kept getting bigger and bigger as I thought of more things to add and explore… instead I am just writing this introduction and doing the fun stuff elsewhere. So, the quick rundown is this: I hope to use this blog to share my passion for data science by reaching two types of readers.&lt;/p&gt;
-&lt;p&gt;The first group I would like to reach is everyone. Data science is used to answer pretty much everything these days. I want to show people how data science is done on real data and real problems as well as explain why it works. To be clear, this blog is about the methods and tools behind data science, but I aspire to write and discuss topics in a way that is accessible to all. “If you can’t explain it simply, you don’t really understand it” - &lt;a href=&#34;https://kottke.org/17/06/if-you-cant-explain-something-in-simple-terms-you-dont-understand-it&#34;&gt;Richard Feynman&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The second reader I would like to reach are fellow data scientists. While I want everyone to understand what is going on in general, I want the people who are interested to be able to see under the hood and learn the more intricate details. If you are interested in the code and the technical aspects, I hope that this is the place for you more so than for the average person.&lt;/p&gt;
-&lt;p&gt;Obviously, creating the type of content that reaches both these groups of people will be very difficult to create. I am really not sure how it will go. For one thing, as I am sure you may have already noticed, I am not the best writer in the world. It likely won’t work the way I have idealized it in my head but, at the end of the day, I’m also doing all of this for a third group - me. I want to continue to learn and push my skills as a professional. Having this type of outlet gives me a product to work toward so that I can see my growth as a data scientist in practical term. If no one else reads any of these posts, I will still learn a lot and be better for it.&lt;/p&gt;
-&lt;p&gt;So… Thanks for being here and all that. Talk to you soon.&lt;/p&gt;
-&lt;/div&gt;
-</description>
     </item>
     
     <item>

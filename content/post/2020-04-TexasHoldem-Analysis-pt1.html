@@ -1,0 +1,92 @@
+---
+title: Introduction to Texas Hold'em
+author: Christopher Maerzluft
+date: '2020-04-08'
+slug: intro-poker-data
+categories: []
+tags: ['Texas Holdem', 'Introduction', 'Analysis', 'Descriptive Statistics']
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<div id="poker-i-barely-know-her" class="section level2">
+<h2>Poker! I Barely Know her!</h2>
+<p>I recently listened to a story on the podcast for <a href="https://themoth.org/stories/the-big-things-you-dont-do">Moth Radio Hour</a>. The speaker, <a href="https://en.wikipedia.org/wiki/Annie_Duke">Annie Duke</a>, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules <a href="http://www.wsop.com/poker-games/texas-holdem/">here</a>. As a part of her story she mentioned that she first started playing poker when her <a href="https://en.wikipedia.org/wiki/Howard_Lederer">brother</a>, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15 minute episode.</p>
+<p>Casino games are a great way of introducing people to basic statistical concepts such as probability but poker allows us to explore data science in ways that other games can’t. Anyone who is the least bit familiar with poker will tell you that the game requires skill. So the challenge for this series then is to learn through data science methodology the skills necessary to be <em>good</em> at poker. This is only part 1 of the series and I’m not sure how long it will go or even where it will ultimately go so for now, I am just going to start where Annie did: If am going to begin playing Texas Hold’em, what are the best hands to start out with?</p>
+</div>
+<div id="start-at-the-beginning" class="section level2">
+<h2>Start at the Beginning</h2>
+<p>There are three ways to approach this question. The first is to break out the good Ol’ <a href="http://www.numericana.com/answer/counting.htm#stud7">combinatorics</a> and attempt to calculate the probabilities by hand but that honestly sounds horrible. The second option would be to collect real <a href="https://poker.stackexchange.com/questions/881/publicly-available-poker-stats">data</a>. However, the nature of poker has created an environment where complete data costs money to get access and free data is censored in ways that aren’t ideal for starting out. This just leaves the last option which is only available to us due to the simplicity of poker - simulate the data we need. Eventually we will need to work with the real data as we can’t simulate every aspect of poker, such as betting strategy, without real data but I think that building a simulation of Texas Hold’em will help inform our analysis of the real data which will in turn feed back into our simulation. I will save a post about how to simulate this data for a future post.</p>
+<p>One of the great things about simulating data is that we can control the data in nearly every way imaginable. Obviously, we can control how much data we will create, and we are only contrained by our computer’s memory limitations and our patience. Sample size is very important when dealing with data - especially data that has such a large number of potential outcomes (There are 133,784,560 possible hand combinations in 7 card poker). For this post we will generate one million rounds of poker. We can also control how many players there are in each round. Later on we will find that the number of players will impact how the likelihood of our outcomes. Generally speaking the number of players in a game can range from two (Heads-up Poker) up to ten but after a short <a href="https://www.pokernews.com/news/2018/12/the-perfect-poker-tournament-part-1-how-many-players-32793.htm">Google</a>, it seems that eight is more of the ideal starting number of players. For this analysis, unless stated otherwise, we will use eight players. At one million rounds and eight players we will ultimately have eight million unique hands of poker to explore.</p>
+</div>
+<div id="getting-a-baseline" class="section level2">
+<h2>Getting a Baseline</h2>
+<p>Having created our dataset, a good first step is to make sure our data aligns with the expected results from the theoretical probabilistic model. The next table shows the <a href="https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_7-card_poker_hands">expected distribution</a> of final hands verse the estimated distribution from our simulated data. If the Expected results and Estimated results were significantly different we would worry that either our coding was wrong or that we weren’t working with enough data. The former would require us to find the error in the code but the latter we can deal with (and will explore in a future post). Fortunately, the results line up really well with our eight millions hands of poker.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Hand</th>
+<th>Expected</th>
+<th>Estimated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Straight Flush</td>
+<td>0.0311%</td>
+<td>0.0000%</td>
+</tr>
+<tr class="even">
+<td>Four of a Kind</td>
+<td>0.168%</td>
+<td>0.1900%</td>
+</tr>
+<tr class="odd">
+<td>Full House</td>
+<td>2.60%</td>
+<td>2.4400%</td>
+</tr>
+<tr class="even">
+<td>Flush</td>
+<td>3.03%</td>
+<td>2.8000%</td>
+</tr>
+<tr class="odd">
+<td>Straight</td>
+<td>4.62%</td>
+<td>4.7200%</td>
+</tr>
+<tr class="even">
+<td>Three of a Kind</td>
+<td>4.83%</td>
+<td>4.8200%</td>
+</tr>
+<tr class="odd">
+<td>Two Pair</td>
+<td>23.5%</td>
+<td>23.1800%</td>
+</tr>
+<tr class="even">
+<td>One Pair</td>
+<td>43.8%</td>
+<td>44.3000%</td>
+</tr>
+<tr class="odd">
+<td>High Card</td>
+<td>17.4%</td>
+<td>17.5500%</td>
+</tr>
+</tbody>
+</table>
+<p>These are how often these hands are created (assuming people all stay in) but how often do these hands win overall and given the person has them Now is time to show differences in results between the different number of players</p>
+<p>This also raises the question of: if I have a good hand what am I mostly likely to lose to?</p>
+<p>These all help us think of the end strategy but we still haven’t answered the question of where to start</p>
+<p>What should we expect to look for (suited, paired, close together)</p>
+<p>distribution of pocket cards is easy to calculate so not wasting time on plot</p>
+<p>which combos lead to win most often (8 players)</p>
+<p>which combos lead to win most often 2-10 player plot</p>
+<p>conclusion</p>
+</div>
