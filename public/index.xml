@@ -100,7 +100,7 @@ load(sprintf(&amp;quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&amp;quot;, path
 &lt;p&gt;These are how often these hands are created (assuming people all stay in)
 but how often do these hands win overall and given the person has them
 Now is time to show differences in results between the different number of players&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(p2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(p1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This also raises the question of: if I have a good hand what am I mostly likely to lose to?&lt;/p&gt;
 &lt;p&gt;These all help us think of the end strategy but we still haven’t answered the question of where to start&lt;/p&gt;

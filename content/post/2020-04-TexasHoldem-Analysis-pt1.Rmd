@@ -56,7 +56,9 @@ but how often do these hands win overall and given the person has them
 Now is time to show differences in results between the different number of players
 
 ```{r, fig.fullwidth=TRUE} 
-print(p2)
+print(p1)
+
+
 ```
 
 This also raises the question of: if I have a good hand what am I mostly likely to lose to?
