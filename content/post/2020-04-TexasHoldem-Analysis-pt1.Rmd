@@ -8,16 +8,13 @@ tags: ['Texas Holdem', 'Introduction', 'Analysis', 'Descriptive Statistics']
 header:
   caption: ''
   image: ''
-output: 
- html_document
-editor_options: 
-  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
 # Location
-if (any(grepl("Blog.Rproj", list.files()))) {
-  pathtofile <- "content/post/post-topics/TexasHoldEm/Work/results"
+print(list.files())
+if (any(grepl("post_topics", list.files()))) {
+  pathtofile <- "post_topics/TexasHoldEm/Work/results"
 } else {
   pathtofile <- "Work/results"
 }

@@ -18,7 +18,7 @@ copyright = "&copy; 2020"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "post-topics$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "blogdown$", "post_topics"]
 preserveTaxonomyNames = true
 paginate = 10
 
