@@ -1,0 +1,6 @@
+[submodule "content/post/post-topics/TexasHoldEm"]
+	path = content/post/post-topics/TexasHoldEm
+	url = https://github.com/cmaerzluft/TexasHoldEm.git
+[submodule "content/post/post_topics/TexasHoldEm/TexasHoldEm"]
+	path = content/post/post_topics/TexasHoldEm/TexasHoldEm
+	url = https://github.com/cmaerzluft/TexasHoldEm.git

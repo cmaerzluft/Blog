@@ -8,45 +8,21 @@ tags: ['Texas Holdem', 'Introduction', 'Analysis', 'Descriptive Statistics']
 header:
   caption: ''
   image: ''
+output: 
+ html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
-```{r setup, cache = TRUE, include = FALSE, warning = FALSE}
+```{r setup, include = FALSE}
 # Location
-if (!any(grepl("data-raw", list.files()))) {
-  setwd("../..")
+if (any(grepl("Blog.Rproj", list.files()))) {
+  pathtofile <- "content/post/post-topics/TexasHoldEm/Work/results"
+} else {
+  pathtofile <- "Work/results"
 }
 
-# Libraries Needed
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(scales)
-library(wesanderson)
-library(knitr)
-library(kableExtra)
-options(scipen = 999)
-# Load data
-datasize <- 5
-units <- "k"
-files <- grep(sprintf("sim%s%sgames", datasize, units), list.files("data-raw/TexasHoldEm"), value = TRUE)
-
-# Make sure 10 is moved to last spot
-files <- files[order(nchar(files), files)]
-games_list <- list()
-for (i1 in files) {
-  print(i1)
-  load(sprintf("data-raw/TexasHoldEm/%s", i1))
-  name <- gsub(sprintf("sim%s%sgames_", datasize, units), "", i1)
-  name <- gsub("players.Rdata", "", name)
-  games_list[[sprintf("players%s", name)]] <- games
-}
-print(summary(games_list))
-# Prep hand type
-hand_lvls <- c("Straight Flush", "Four of a Kind", "Full House", "Flush", "Straight", "Three of a Kind", "Two Pair", "Pair", "High Card")
-games_list <- lapply(games_list, function(x) {
-  x$final_hand_type <- factor(x$final_hand_type, levels = hand_lvls)
-  return(x)
-})
+load(sprintf("%s/2020-01-TexasHoldem-Analysis-pt1.Rdata", pathtofile))
 ```
 
 ## Poker! I Barely Know her!
@@ -62,11 +38,6 @@ There are three ways to approach this question. The first is to break out the go
 One of the great things about simulating data is that we can control the data in nearly every way imaginable. Obviously, we can control how much data we will create, and we are only contrained by our computer's memory limitations and our patience. Sample size is very important when dealing with data - especially data that has such a large number of potential outcomes (There are 133,784,560 possible hand combinations in 7 card poker). For this post we will generate one million rounds of poker. We can also control how many players there are in each round. Later on we will find that the number of players will impact how the likelihood of our outcomes. Generally speaking the number of players in a game can range from two (Heads-up Poker) up to ten but after a short [Google](https://www.pokernews.com/news/2018/12/the-perfect-poker-tournament-part-1-how-many-players-32793.htm), it seems that eight is more of the ideal starting number of players. For this analysis, unless stated otherwise, we will use eight players. At one million rounds and eight players we will ultimately have eight million unique hands of poker to explore.
 
 ## Getting a Baseline
-
-```{r baseline, include = FALSE}
-t1 <- prop.table(table(games_list[[1]]$final_hand_type))
-t1 <- sprintf("%0.4f%%", t1*100)
-```
 
 Having created our dataset, a good first step is to make sure our data aligns with the expected results from the theoretical probabilistic model. The next table shows the [expected distribution](https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_7-card_poker_hands) of final hands verse the estimated distribution from our simulated data. If the Expected results and Estimated results were significantly different we would worry that either our coding was wrong or that we weren't working with enough data. The former would require us to find the error in the code but the latter we can deal with (and will explore in a future post). Fortunately, the results line up really well with our eight millions hands of poker.
 
