@@ -18,6 +18,16 @@
       <description>
 
 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#, include = FALSE}
+# library(ggplot2)
+# Location
+if (any(grepl(&amp;quot;post_topics&amp;quot;, list.files()))) {
+  pathtofile &amp;lt;- &amp;quot;post_topics/TexasHoldEm/Work/results&amp;quot;
+} else {
+  pathtofile &amp;lt;- &amp;quot;Work/results&amp;quot;
+}
+
+load(sprintf(&amp;quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&amp;quot;, pathtofile))&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;poker-i-barely-know-her&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Poker! I Barely Know her!&lt;/h2&gt;
 &lt;p&gt;I recently listened to a story on the podcast for &lt;a href=&#34;https://themoth.org/stories/the-big-things-you-dont-do&#34;&gt;Moth Radio Hour&lt;/a&gt;. The speaker, &lt;a href=&#34;https://en.wikipedia.org/wiki/Annie_Duke&#34;&gt;Annie Duke&lt;/a&gt;, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules &lt;a href=&#34;http://www.wsop.com/poker-games/texas-holdem/&#34;&gt;here&lt;/a&gt;. As a part of her story she mentioned that she first started playing poker when her &lt;a href=&#34;https://en.wikipedia.org/wiki/Howard_Lederer&#34;&gt;brother&lt;/a&gt;, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15 minute episode.&lt;/p&gt;
@@ -43,53 +53,55 @@
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;Straight Flush&lt;/td&gt;
 &lt;td&gt;0.0311%&lt;/td&gt;
-&lt;td&gt;0.0250%&lt;/td&gt;
+&lt;td&gt;0.0314%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;Four of a Kind&lt;/td&gt;
 &lt;td&gt;0.168%&lt;/td&gt;
-&lt;td&gt;0.1800%&lt;/td&gt;
+&lt;td&gt;0.1681%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;Full House&lt;/td&gt;
 &lt;td&gt;2.60%&lt;/td&gt;
-&lt;td&gt;2.6300%&lt;/td&gt;
+&lt;td&gt;2.5892%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;Flush&lt;/td&gt;
 &lt;td&gt;3.03%&lt;/td&gt;
-&lt;td&gt;2.9550%&lt;/td&gt;
+&lt;td&gt;3.0275%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;Straight&lt;/td&gt;
 &lt;td&gt;4.62%&lt;/td&gt;
-&lt;td&gt;4.9150%&lt;/td&gt;
+&lt;td&gt;4.6169%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;Three of a Kind&lt;/td&gt;
 &lt;td&gt;4.83%&lt;/td&gt;
-&lt;td&gt;4.8750%&lt;/td&gt;
+&lt;td&gt;4.8289%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;Two Pair&lt;/td&gt;
 &lt;td&gt;23.5%&lt;/td&gt;
-&lt;td&gt;23.5250%&lt;/td&gt;
+&lt;td&gt;23.4721%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td&gt;One Pair&lt;/td&gt;
 &lt;td&gt;43.8%&lt;/td&gt;
-&lt;td&gt;43.5525%&lt;/td&gt;
+&lt;td&gt;43.8502%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td&gt;High Card&lt;/td&gt;
 &lt;td&gt;17.4%&lt;/td&gt;
-&lt;td&gt;17.3425%&lt;/td&gt;
+&lt;td&gt;17.4157%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;These are how often these hands are created (assuming people all stay in)
 but how often do these hands win overall and given the person has them
 Now is time to show differences in results between the different number of players&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(p2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This also raises the question of: if I have a good hand what am I mostly likely to lose to?&lt;/p&gt;
 &lt;p&gt;These all help us think of the end strategy but we still haven’t answered the question of where to start&lt;/p&gt;
 &lt;p&gt;What should we expect to look for (suited, paired, close together)&lt;/p&gt;

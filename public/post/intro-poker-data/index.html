@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="Poker! I Barely Know her! I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules here. As a part of her story she mentioned that she first started playing poker when her brother, one of the other nine players at the high stakes game, encouraged her to start playing professionally.">
+  <meta name="description" content="#, include = FALSE} # library(ggplot2) # Location if (any(grepl(&quot;post_topics&quot;, list.files()))) { pathtofile &lt;- &quot;post_topics/TexasHoldEm/Work/results&quot; } else { pathtofile &lt;- &quot;Work/results&quot; } load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile)) Poker! I Barely Know her! I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules here.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/intro-poker-data/">
@@ -101,7 +101,7 @@
   <meta property="og:site_name" content="Not Just a Statistic">
   <meta property="og:url" content="/post/intro-poker-data/">
   <meta property="og:title" content="Introduction to Texas Hold&#39;em | Not Just a Statistic">
-  <meta property="og:description" content="Poker! I Barely Know her! I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules here. As a part of her story she mentioned that she first started playing poker when her brother, one of the other nine players at the high stakes game, encouraged her to start playing professionally.">
+  <meta property="og:description" content="#, include = FALSE} # library(ggplot2) # Location if (any(grepl(&quot;post_topics&quot;, list.files()))) { pathtofile &lt;- &quot;post_topics/TexasHoldEm/Work/results&quot; } else { pathtofile &lt;- &quot;Work/results&quot; } load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile)) Poker! I Barely Know her! I recently listened to a story on the podcast for Moth Radio Hour. The speaker, Annie Duke, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules here.">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2020-04-08T00:00:00&#43;00:00">
@@ -324,6 +324,16 @@
       
 
 
+<pre class="r"><code>#, include = FALSE}
+# library(ggplot2)
+# Location
+if (any(grepl(&quot;post_topics&quot;, list.files()))) {
+  pathtofile &lt;- &quot;post_topics/TexasHoldEm/Work/results&quot;
+} else {
+  pathtofile &lt;- &quot;Work/results&quot;
+}
+
+load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile))</code></pre>
 <div id="poker-i-barely-know-her" class="section level2">
 <h2>Poker! I Barely Know her!</h2>
 <p>I recently listened to a story on the podcast for <a href="https://themoth.org/stories/the-big-things-you-dont-do">Moth Radio Hour</a>. The speaker, <a href="https://en.wikipedia.org/wiki/Annie_Duke">Annie Duke</a>, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules <a href="http://www.wsop.com/poker-games/texas-holdem/">here</a>. As a part of her story she mentioned that she first started playing poker when her <a href="https://en.wikipedia.org/wiki/Howard_Lederer">brother</a>, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15 minute episode.</p>
@@ -349,53 +359,55 @@
 <tr class="odd">
 <td>Straight Flush</td>
 <td>0.0311%</td>
-<td>0.0250%</td>
+<td>0.0314%</td>
 </tr>
 <tr class="even">
 <td>Four of a Kind</td>
 <td>0.168%</td>
-<td>0.1800%</td>
+<td>0.1681%</td>
 </tr>
 <tr class="odd">
 <td>Full House</td>
 <td>2.60%</td>
-<td>2.6300%</td>
+<td>2.5892%</td>
 </tr>
 <tr class="even">
 <td>Flush</td>
 <td>3.03%</td>
-<td>2.9550%</td>
+<td>3.0275%</td>
 </tr>
 <tr class="odd">
 <td>Straight</td>
 <td>4.62%</td>
-<td>4.9150%</td>
+<td>4.6169%</td>
 </tr>
 <tr class="even">
 <td>Three of a Kind</td>
 <td>4.83%</td>
-<td>4.8750%</td>
+<td>4.8289%</td>
 </tr>
 <tr class="odd">
 <td>Two Pair</td>
 <td>23.5%</td>
-<td>23.5250%</td>
+<td>23.4721%</td>
 </tr>
 <tr class="even">
 <td>One Pair</td>
 <td>43.8%</td>
-<td>43.5525%</td>
+<td>43.8502%</td>
 </tr>
 <tr class="odd">
 <td>High Card</td>
 <td>17.4%</td>
-<td>17.3425%</td>
+<td>17.4157%</td>
 </tr>
 </tbody>
 </table>
 <p>These are how often these hands are created (assuming people all stay in)
 but how often do these hands win overall and given the person has them
 Now is time to show differences in results between the different number of players</p>
+<pre class="r"><code>print(p2)</code></pre>
+<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>This also raises the question of: if I have a good hand what am I mostly likely to lose to?</p>
 <p>These all help us think of the end strategy but we still haven’t answered the question of where to start</p>
 <p>What should we expect to look for (suited, paired, close together)</p>
