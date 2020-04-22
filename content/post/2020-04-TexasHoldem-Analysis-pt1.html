@@ -12,29 +12,25 @@ header:
 
 
 
-<pre class="r"><code>#, include = FALSE}
-# library(ggplot2)
-# Location
-if (any(grepl(&quot;post_topics&quot;, list.files()))) {
-  pathtofile &lt;- &quot;post_topics/TexasHoldEm/Work/results&quot;
-} else {
-  pathtofile &lt;- &quot;Work/results&quot;
-}
-
-load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile))</code></pre>
 <div id="poker-i-barely-know-her" class="section level2">
 <h2>Poker! I Barely Know her!</h2>
-<p>I recently listened to a story on the podcast for <a href="https://themoth.org/stories/the-big-things-you-dont-do">Moth Radio Hour</a>. The speaker, <a href="https://en.wikipedia.org/wiki/Annie_Duke">Annie Duke</a>, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules <a href="http://www.wsop.com/poker-games/texas-holdem/">here</a>. As a part of her story she mentioned that she first started playing poker when her <a href="https://en.wikipedia.org/wiki/Howard_Lederer">brother</a>, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15 minute episode.</p>
-<p>Casino games are a great way of introducing people to basic statistical concepts such as probability but poker allows us to explore data science in ways that other games can’t. Anyone who is the least bit familiar with poker will tell you that the game requires skill. So the challenge for this series then is to learn through data science methodology the skills necessary to be <em>good</em> at poker. This is only part 1 of the series and I’m not sure how long it will go or even where it will ultimately go so for now, I am just going to start where Annie did: If am going to begin playing Texas Hold’em, what are the best hands to start out with?</p>
+<p>I recently listened to a story on the podcast for <a href="https://themoth.org/stories/the-big-things-you-dont-do">Moth Radio Hour</a>. The speaker, <a href="https://en.wikipedia.org/wiki/Annie_Duke">Annie Duke</a>, described how she came to be in a high stakes game of Texas Hold’em with nine of the other world’s best poker players. If you aren’t familiar with the Texas Hold’em, you can find a nice summary of the game and its rules <a href="http://www.wsop.com/poker-games/texas-holdem/">here</a>. As a part of her story she mentioned that she first started playing poker when her <a href="https://en.wikipedia.org/wiki/Howard_Lederer">brother</a>, one of the other nine players at the high stakes game, encouraged her to start playing professionally. When she expressed hesitation, he wrote on a small cocktail napkin a list of hands which she should focus on as she began to play. He said, “stick to these hands and you will be fine.” Soon she became one of the top poker players in the world - good enough to get an invite to this very exclusive match. If you want to hear more about the tournament and how she was able to overcome her self-doubt, I recommend you listen to the 15-minute episode.</p>
+<p>Casino games are a great way of introducing people to basic statistical concepts such as probability, but poker allows us to explore data science in ways that other games can’t. Anyone who is the least bit familiar with poker will tell you that the game requires skill. So, the challenge for this series then is to learn through data science methodology the skills necessary to be <em>good</em> at poker. This is only part 1 of the series and I’m not sure how long it will go or even where it will ultimately go so for now, I am just going to start where Annie did: If am going to begin playing Texas Hold’em, what are the best hands to start out with?</p>
+<center>
+<img src="https://media1.tenor.com/images/00b478164d5616cd56bcedf8ed5a1a3d/tenor.gif" />
+</center>
 </div>
 <div id="start-at-the-beginning" class="section level2">
 <h2>Start at the Beginning</h2>
 <p>There are three ways to approach this question. The first is to break out the good Ol’ <a href="http://www.numericana.com/answer/counting.htm#stud7">combinatorics</a> and attempt to calculate the probabilities by hand but that honestly sounds horrible. The second option would be to collect real <a href="https://poker.stackexchange.com/questions/881/publicly-available-poker-stats">data</a>. However, the nature of poker has created an environment where complete data costs money to get access and free data is censored in ways that aren’t ideal for starting out. This just leaves the last option which is only available to us due to the simplicity of poker - simulate the data we need. Eventually we will need to work with the real data as we can’t simulate every aspect of poker, such as betting strategy, without real data but I think that building a simulation of Texas Hold’em will help inform our analysis of the real data which will in turn feed back into our simulation. I will save a post about how to simulate this data for a future post.</p>
-<p>One of the great things about simulating data is that we can control the data in nearly every way imaginable. Obviously, we can control how much data we will create, and we are only contrained by our computer’s memory limitations and our patience. Sample size is very important when dealing with data - especially data that has such a large number of potential outcomes (There are 133,784,560 possible hand combinations in 7 card poker). For this post we will generate one million rounds of poker. We can also control how many players there are in each round. Later on we will find that the number of players will impact how the likelihood of our outcomes. Generally speaking the number of players in a game can range from two (Heads-up Poker) up to ten but after a short <a href="https://www.pokernews.com/news/2018/12/the-perfect-poker-tournament-part-1-how-many-players-32793.htm">Google</a>, it seems that eight is more of the ideal starting number of players. For this analysis, unless stated otherwise, we will use eight players. At one million rounds and eight players we will ultimately have eight million unique hands of poker to explore.</p>
+<p>One of the great things about simulating data is that we can control the data in nearly every way imaginable. Obviously, we can control how much data we will create, and we are only constrained by our computer’s memory limitations and our patience. Sample size is very important when dealing with data - especially data that has such a large number of potential outcomes (There are 133,784,560 possible hand combinations in 7 card poker). For this post we will generate one million rounds of poker. We can also control how many players there are in each round. Later on, we will find that the number of players will impact how the likelihood of our outcomes. Generally speaking, the number of players in a game can range from two (Heads-up Poker) up to ten but after a short <a href="https://www.pokernews.com/news/2018/12/the-perfect-poker-tournament-part-1-how-many-players-32793.htm">Google</a>, it seems that eight is more of the ideal starting number of players. For this analysis, unless stated otherwise, we will use eight players. At one million rounds and eight players we will ultimately have eight million unique hands of poker to explore.</p>
+<center>
+<img src="https://media1.tenor.com/images/4d3ac7fa0c4a701b425a2ec8ef3ebd03/tenor.gif" />
+</center>
 </div>
 <div id="getting-a-baseline" class="section level2">
 <h2>Getting a Baseline</h2>
-<p>Having created our dataset, a good first step is to make sure our data aligns with the expected results from the theoretical probabilistic model. The next table shows the <a href="https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_7-card_poker_hands">expected distribution</a> of final hands verse the estimated distribution from our simulated data. If the Expected results and Estimated results were significantly different we would worry that either our coding was wrong or that we weren’t working with enough data. The former would require us to find the error in the code but the latter we can deal with (and will explore in a future post). Fortunately, the results line up really well with our eight millions hands of poker.</p>
+<p>Having created our dataset, a good first step is to make sure our data aligns with the expected results from the theoretical probabilistic model. The next table shows the <a href="https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_7-card_poker_hands">expected distribution</a> of final hands verse the estimated distribution from our simulated data. If the Expected results and Estimated results were significantly different, we would worry that either our coding was wrong or that we weren’t working with enough data. The former would require us to find the error in the code but the latter we can deal with (and will explore in a future post). Fortunately, the results line up really well with our eight million hands of poker.</p>
 <table>
 <thead>
 <tr class="header">
@@ -47,12 +43,12 @@ load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile))
 <tr class="odd">
 <td>Straight Flush</td>
 <td>0.0311%</td>
-<td>0.0314%</td>
+<td>0.0297%</td>
 </tr>
 <tr class="even">
 <td>Four of a Kind</td>
 <td>0.168%</td>
-<td>0.1681%</td>
+<td>0.1663%</td>
 </tr>
 <tr class="odd">
 <td>Full House</td>
@@ -62,45 +58,58 @@ load(sprintf(&quot;%s/2020-01-TexasHoldem-Analysis-pt1.Rdata&quot;, pathtofile))
 <tr class="even">
 <td>Flush</td>
 <td>3.03%</td>
-<td>3.0275%</td>
+<td>3.0251%</td>
 </tr>
 <tr class="odd">
 <td>Straight</td>
 <td>4.62%</td>
-<td>4.6169%</td>
+<td>4.6065%</td>
 </tr>
 <tr class="even">
 <td>Three of a Kind</td>
 <td>4.83%</td>
-<td>4.8289%</td>
+<td>4.8257%</td>
 </tr>
 <tr class="odd">
 <td>Two Pair</td>
 <td>23.5%</td>
-<td>23.4721%</td>
+<td>23.5086%</td>
 </tr>
 <tr class="even">
 <td>One Pair</td>
 <td>43.8%</td>
-<td>43.8502%</td>
+<td>43.8552%</td>
 </tr>
 <tr class="odd">
 <td>High Card</td>
 <td>17.4%</td>
-<td>17.4157%</td>
+<td>17.3938%</td>
 </tr>
 </tbody>
 </table>
-<p>These are how often these hands are created (assuming people all stay in)
-but how often do these hands win overall and given the person has them
-Now is time to show differences in results between the different number of players</p>
-<pre class="r"><code>print(p1)</code></pre>
-<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>This also raises the question of: if I have a good hand what am I mostly likely to lose to?</p>
-<p>These all help us think of the end strategy but we still haven’t answered the question of where to start</p>
-<p>What should we expect to look for (suited, paired, close together)</p>
-<p>distribution of pocket cards is easy to calculate so not wasting time on plot</p>
-<p>which combos lead to win most often (8 players)</p>
-<p>which combos lead to win most often 2-10 player plot</p>
-<p>conclusion</p>
+<p>In addition to these results verifying our method for simulating hands of poker, this table should make painfully clear that poker is not about waiting around for a movie finish hand (i.e. the royal flush). Nearly 85% of hands are worse than a three of a kind! Instead of asking how often we get these hands, a better question for now is, how often are these hands the best hand? While it is a simple enough question, it actually gives us two additional concepts to consider.</p>
+<p>First, answering this new question will require us to acknowledge the fact that the number of players in a hand can dramatically affect the results of a match. The distribution of hands given by the above table will hold in the long run no matter how many players are at a table because after each deal the cards are re-shuffled - giving the system the important property of independence. However, the hands within a single round of Texas Hold’em will not be independent of each other as every player shares the same set of five community cards. This leads us to the second concept we need to address before answering the new question; do we care about how often these hands win all the time or do we really want to know how often these hands win given they are the hand we have? The second probability is called the conditional probability and plays an important role in most data science investigations. Obviously, it is time to look at some more results! Since, tables are boring, this time we will look at the results using a graph:</p>
+<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-1.png" width="49.7%" /><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-1-2.png" width="49.7%" /></p>
+<p>These are the same plots but with different numbers of players active in each round. On the left, we see what happens when there are only two players (heads up poker) and on the right we see ten players at each table (similar to what the start of a poker tournament might look like). Within each plot, the left sub-plot is telling us what proportion of the one million rounds of Texas Hold’em are won by each hand type, and the right side is displaying the conditional probability that a hand type will be a winner. i.e. when a player holds a specific hand type how often do they end up winning the hand.</p>
+<p>The first thing I notice in this plot is the movement between the overall percentage as we move from two players to ten players. In a heads-up match, a simple pair and two pairs will win over 60% of matches with a pair accounting for the most wins of any hand type. For a ten-player game however, a straight is the most likely hand to be a winner with a pair becoming too weak to win many hands. A similar trend occurs in the conditional probability half of the plot where we see all hands become weaker with an increase in players. Anything better than two pair has over a 75% chance of winning if you have it for two players but only a four of a kind and a straight flush can claim such strength against ten players.</p>
+<p>One last thing that I think is worth noting from this plot is the fact that a straight is a safer hand to have than a flush even though a flush is technically a better hand. This made me wonder what hands a flush might be susceptible to which led to the creation of the next plot. The results are really not that surprising - hands are most likely to lose to better versions of themselves. The only hand where this rule doesn’t hold up is with three of a kinds which are most likely to lose to full houses and interestingly straights. These will all be things we need to consider when we start to fine tune a model.</p>
+<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-2-1.png" width="100%" /></p>
+<p>So far, we have been looking at the results of a hand, partially as a way to confirm our simulated data looks correct and partially to get an idea of what to look out for once we enter a hand, but we still haven’t really addressed the original question. In order to decide what pocket cards we should start out with, we need to look at the outcomes based on our pocket cards and not the final hand that they make.</p>
+</div>
+<div id="stop-avoiding-the-question" class="section level2">
+<h2>Stop Avoiding the Question</h2>
+<p>Based on our work up to this point, it might be logical to show how the different pocket card combinations relate to the final hand types; I’m not going to do that at the moment though. This is really meant as more of an introduction and such an undertaking could probably be its own post without really adding much insight to what we are trying to do. For example, take the fact that people who start off with pocket pairs are more likely to make two pair or even a full house compared to people who don’t begin a hand with pocket pairs. This is something that should be really intuitive based on the previous results. It also doesn’t quantify in any way how strong a given set of pocket cards really are. Ultimately, what I have decided to do is create and present my initial version of a <a href="https://www.cardschat.com/poker-starting-hands.php">hand chart</a>.</p>
+<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-3-1.png" width="100%" /></p>
+<p>The graph above shows the likelihood that a set of pocket cards is to win a round for eight players. The bottom left half of the triangle shows the probability when the cards are unsuited (logically pairs can never be the same suit). To keep the plot from having too much text only the top quarter of hands have their probabilities displayed via text. From this we can create a hierarchy of hands that we can focus on when starting out in Texas Hold’em: paired face cards are the strongest, an Ace with a suited face card are next strongest, and so on. Based on our previous results, this chart should seem fairly obvious. We already saw that hands are most likely to lose to better versions of themselves - and wouldn’t you know it, having even just one Ace (the best card in the deck) improves your chances of winning the round. Having two suited cards is also better than not as it makes it more likely for a person to achieve a flush. One cell that really drives this home is the unsuited two and seven, sometimes called the <a href="https://en.wikipedia.org/wiki/List_of_playing-card_nicknames#Texas_hold_&#39;em_pocket_card_nicknames">Beer Hand</a> - as in time to go have a beer. It is clearly the worst hand on the chart and using the logic we have already defined it is easy to see why. Being unsuited, a player would need four cards of one suit in the community cards to make a flush (and depending on which suit, the person could have the lowest kicker possible). Being separated from each other by so much, a person would need four cards in the community cards to make a straight and while the person could make a Jack high straight it would only take one person having a Queen to make that hand a loser. Finally, the card values themselves are so low, it is very likely that most people will have at least one card with higher values.</p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>If you ignore the people side of Texas Hold’em (betting strategy, game theory, and showmanship), poker is really easy to understand - better cards are, well, better. You are probably thinking to yourself, why did I waste my time reading something with such an obvious conclusion? I promise that this is just the beginning. From here we will start to explore real data from real games. We will have to deal with both common and uncommon data challenges in order to build a model that can tell a user how to play a hand of poker as best as possible. Using Texas Hold’em we will cover topics such as censored data, machine learning, and simulation. I will find time to discuss the coding challenges behind my work and discuss why it all matters. This will be a project in many parts. I will likely jump to other projects as I go as well just to keep things fresh, but in the end, I aim to solve Texas Hold’em as best I can, I hope you stick around to see it all unfold.</p>
+<p>I leave you with one last plot. The plot below is a generalized version of the last plot that includes the number of players as a dimension for the circles to vary on. Due to the way the math works out, the outside ring shows the probability of winning a game when playing a heads-up game while the inner ring shows the probability of the same pair of cards in a game of ten people. This time there isn’t any room for text showing the numbers, but the size and color can be used to estimate the values.</p>
+<p><img src="/post/2020-04-TexasHoldem-Analysis-pt1_files/figure-html/unnamed-chunk-4-1.png" width="100%" /></p>
+<style type="text/css">
+.article-style img {
+  display: inline-block;
+}
+</style>
 </div>

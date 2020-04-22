@@ -153,13 +153,13 @@ enableGitInfo = false
   #   For multilingual sites, `publication_types` can be copied to each language section at the end of this file and
   #   translated.
   publication_types = [
-    'Uncategorized',  # 0
-    'Conference paper',  # 1
+    'Uncategorized',    # 0
+    'Conference paper', # 1
     'Journal article',  # 2
-    'Manuscript',  # 3
-    'Report',  # 4
-    'Book',  # 5
-    'Book section'  # 6
+    'Manuscript',       # 3
+    'Report',           # 4
+    'Book',             # 5
+    'Book section'      # 6
   ]
 
   # Configuration of talk pages.
@@ -240,18 +240,18 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Home"
-  url = "#about"
+  url = "#posts"
   weight = 1
-
+  
+[[menu.main]]
+  name = "About"
+  url = "#about"
+  weight = 2
+  
 [[menu.main]]
   name = "Publications"
   url = "#publications"
-  weight = 2
-
-[[menu.main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 2
+  weight = 3
 
 #[[menu.main]]
 #  name = "Projects"
@@ -262,11 +262,11 @@ enableGitInfo = false
 #  name = "Teaching"
 #  url = "#teaching"
 #  weight = 5
-
+  
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 3
+  weight = 4
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
